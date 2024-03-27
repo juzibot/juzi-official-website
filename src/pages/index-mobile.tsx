@@ -51,7 +51,7 @@ const MobileIndexPage: NextPage<{}> = () => {
                 </div>
                 </>
             }
-          <div className='w-full mt-5 flex justify-center'>
+          <div className='w-full mt-8 flex justify-center'>
             <a
               style={{ background: 'linear-gradient(96deg, #EF3BFB 0.67%, #6721FF 98.48%)' }}
               className="h-12 px-10 flex justify-center items-center rounded-full text-white cursor-pointer text-[18px] hover:text-white"
@@ -61,7 +61,7 @@ const MobileIndexPage: NextPage<{}> = () => {
             </a>
           </div>
           {/* 两个卡片 */}
-          <div className="flex flex-col gap-5 justify-center items-center mt-8">
+          <div className="flex flex-col gap-5 justify-center items-center mt-10">
             <div className="w-[calc(100vw-60px)] h-[20%] p-5 rounded-xl bg-black flex flex-col">
               <div className="text-white font-medium mb-2" style={{ fontSize: i18n.language === 'en' ? 18 : 20 }}>{t('try-gpt')}</div>
               <p className="flex-1 text-white" style={{ fontSize: i18n.language === 'en' ? 12 : 15 }}>{t('try-gpt-subtitle')}</p>
