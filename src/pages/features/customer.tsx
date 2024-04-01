@@ -21,7 +21,7 @@ const CustomerAcquisitionPage: NextPage = () => {
   const showPcModal = useShowModal();
   if (isSmallDevice) {
     return (
-      <div className='m-auto pt-[60px] relative'>
+      <div className='m-auto relative'>
         <Seo page="features-customer" />
         { isZh ? (
           <>
@@ -41,7 +41,7 @@ const CustomerAcquisitionPage: NextPage = () => {
           </>
         ): // English mobile
           <>
-          <img className='w-full' alt='' src='/_images/image-page/customer-0-en.png' /><div
+          <img className='w-full' alt='' src='/_images/image-page/customer-0-en.png'/><div
           ></div><div className="wrapper appeal-bar">
               <div className="container !w-[100%]">
                 <FooterBarWithButton

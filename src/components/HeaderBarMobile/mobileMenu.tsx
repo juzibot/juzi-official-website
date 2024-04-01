@@ -21,7 +21,7 @@ const MobileMenu = () => {
       />
       {showMenu && createPortal(
         <div
-          className='fixed top-[20px] bg-[#fff] z-[100] w-[100%] pt-[16px] overflow-auto'
+          className='fixed top-[0px] bg-[#fff] z-[100] w-[100%] pt-[16px] overflow-auto'
           style={{ height: 'calc(100% - 20px)' }}
         >
           <div className='relative'>
@@ -44,9 +44,8 @@ const MobileMenu = () => {
                 </div>
               </Link>
             </div>
-            <div className='flex flex-col px-[28px] pt-[24px] pb-[32px] gap-[32px]'>
-              {isZh ? (
-              <>
+            {isZh ? (
+              <div className='flex flex-col px-[28px] pt-[24px] pb-[32px] gap-[32px]'>
               <div className='text-[17px] leading-[24px] mt-[24px] font-semibold text-[#364256]'>
               {t('solutions')}
               </div>
@@ -65,15 +64,19 @@ const MobileMenu = () => {
                   消费品解决方案
                 </div>
               </Link>
-              </>
+              </div>
               ): 
-              <Link href="/features/customer" passHref>
-                <div onClick={() => setShowMenu(false)} className="w-[100%] text-[17px] text-[#364256]">
-                  {t('solutions')}
-                </div>
-              </Link>
-              }
-            </div>
+              <>
+              <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
+              <div className='h-[72px] flex items-center px-[28px]'>
+                <Link href="/features/customer" passHref>
+                  <div onClick={() => setShowMenu(false)} className="w-[100%] text-[17px] text-[#364256]">
+                    {t('solutions')}
+                  </div>
+                </Link>
+              </div>
+            </>
+            }
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             {/* <div className='h-[72px] flex items-center px-[28px]'>
               <Link href="/features/case" passHref>

@@ -269,10 +269,21 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
   menu,
 }) => {
   const [menuVisible, toggleMenuVisible] = useState(false);
+  const { pathname } = useRouter();
+  const [borderBottomVisible, setBorderBottomVisible] = useState(false);
   const router = useRouter();
   useEffect(() => {
     toggleMenuVisible(false);
   }, [router.asPath]);
+
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener('scroll', () => {
+        setBorderBottomVisible(window.scrollY > 0);
+      });
+    }
+  }, []);
+  const textColor = pathname === '/' && !borderBottomVisible ? '#fff' : '#54657e'
 
   return href ? (
     <div
@@ -286,6 +297,9 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
           draggable="false"
           target={linkTarget || '_self'}
           onClick={onClick}
+          style={{
+            color: pathname === '/' && !borderBottomVisible ? '#fff' : '#54657e',
+          }}
         >
           <span>{children}</span>
           {hasArrow ? (
@@ -295,11 +309,11 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
               viewBox="0 0 10 6"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ marginLeft: 4 }}
+              style={{ marginLeft: 4,  color: textColor}}
             >
               <path
                 d="M4.99999 3.78132L8.29999 0.481323L9.24266 1.42399L4.99999 5.66666L0.757324 1.42399L1.69999 0.481323L4.99999 3.78132Z"
-                fill="#54657E"
+                fill={textColor}
               />
             </svg>
           ) : null}
@@ -313,7 +327,7 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
       onMouseMove={() => toggleMenuVisible(true)}
       className="menu-button"
     >
-      <span className="menu-item" draggable="false" onClick={onClick}>
+      <span className="menu-item" draggable="false" onClick={onClick} style={{color: pathname === '/' && !borderBottomVisible ? '#fff' : '#54657e'}}>
         <span>{children}</span>
         {hasArrow ? (
           <svg
@@ -322,11 +336,11 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
             viewBox="0 0 10 6"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ marginLeft: 4 }}
+            style={{ marginLeft: 4, color: textColor}}
           >
             <path
               d="M4.99999 3.78132L8.29999 0.481323L9.24266 1.42399L4.99999 5.66666L0.757324 1.42399L1.69999 0.481323L4.99999 3.78132Z"
-              fill="#54657E"
+              fill={textColor}
             />
           </svg>
         ) : null}
@@ -370,6 +384,15 @@ const HeaderBar: NextPage = () => {
   const { pathname } = useRouter();
   const showModal = useShowModal();
 
+  const [windowWidthSmall, setWindowWidthSmall] = useState(false);
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener('resize', () =>
+        setWindowWidthSmall(window.innerWidth < 1060)
+      );
+    }
+  }, []);
+  
   useEffect(() => {
     for (const path in headerbarExtraClassMap) {
       if (pathname.includes(path)) {
@@ -396,7 +419,10 @@ const HeaderBar: NextPage = () => {
       <header
         className={`wrapper header-bar ${
           !isChrome ? 'opacity' : ''
-        } ${headerbarExtraClass} ${borderBottomVisible ? 'has-bg' : 'has-bg'}`}
+        } ${headerbarExtraClass} 
+        ${pathname === '/' && !borderBottomVisible ? 'no-bg' : 'has-bg'}
+        ${borderBottomVisible && 'has-bg'}
+        `}
         style={{
           borderBottom: borderBottomVisible
             ? '1px solid #eee'
@@ -411,10 +437,10 @@ const HeaderBar: NextPage = () => {
             ></img>
           </div>
           <menu className="header-left">
-            <a className="logo" href={host}>
+            <a className="logo" href={`${host}/${i18n.language}`}>
               <Image
                 alt="logo"
-                src="https://cdn-official-website.juzibot.com/images/logo.png"
+                src={ pathname === '/' && !borderBottomVisible ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
                 width={106}
                 height={64}
                 draggable="false"
@@ -460,6 +486,7 @@ const HeaderBar: NextPage = () => {
             }
           </menu>
 
+          {!windowWidthSmall ? (
           <menu className="header-right">
             <HeaderMenu
               linkTarget="_blank"
@@ -472,7 +499,7 @@ const HeaderBar: NextPage = () => {
             </HeaderMenu>
               <Link href="#">
                 <a
-                  className="menu-item primary-link"
+                  className={`menu-item primary-link ${pathname === '/' && !borderBottomVisible ? 'no-bg' : 'has-bg'}`}
                   draggable="false"
                   onClick={() => {
                     let qrCode: ContactUsOption['qrCode'] = 'sf-01';
@@ -489,7 +516,7 @@ const HeaderBar: NextPage = () => {
               </Link>
 
             <div
-              className="menu-item primary-link round"
+              className={`menu-item primary-link round ${pathname === '/' && !borderBottomVisible ? 'no-bg' : 'has-bg'}`}
               draggable="false"
               onClick={() => {
                 let qrCode: ContactUsOption['qrCode'] = 'sf-01';
@@ -508,6 +535,8 @@ const HeaderBar: NextPage = () => {
               {t('login')}
             </div>
           </menu>
+          ) : null }
+
         </div>
       </header>
     </div>

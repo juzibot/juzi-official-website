@@ -26,6 +26,7 @@ const Home: NextPage = () => {
       setWidth(document.body.clientWidth);
     }
   }, []);
+
   const { t, i18n } = useTranslation('common');
   const isZh = i18n.language === 'zh';
   const showModal = useShowModal();
@@ -38,10 +39,11 @@ const Home: NextPage = () => {
     <div className={i18n.language}>
       <Seo page="homepage" />
       <div
-        style={{ backgroundImage: 'url(/_images/image-page/index-top-bg-3.png)' }}
+        style={{ backgroundImage: 'url(/_images/image-page/index-top-bg-3.png)'}}
         className="h-[calc(100vh-0px)] bg-cover flex justify-center items-center"
+        
       >
-        <div className="flex flex-col justify-center items-center mt-[120px]">
+        <div className="flex flex-col justify-center items-center mt-[180px]">
             {/* <img src="/_images/image-page/index-top-logo.png" alt='' className='w-[1200px]' /> */}
             {/* 文字+按钮 */}
             {isZh ? (

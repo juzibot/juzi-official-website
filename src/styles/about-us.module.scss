@@ -367,7 +367,7 @@
 
       &.c-2015 {
         width: 480px;
-        height: 220px;
+        height: auto;
         transform: translate(0, 24px);
 
         &::after {
@@ -377,7 +377,7 @@
 
       &.c-2017 {
         width: 480px;
-        height: 258px;
+        height: auto;
         transform: translate(170px, 336px);
 
         &::before {
@@ -387,7 +387,7 @@
 
       &.c-2018 {
         width: 480px;
-        height: 440px;
+        height: auto;
         transform: translate(130px, -206px);
 
         &::before {
@@ -397,25 +397,25 @@
 
       &.c-2019 {
         width: 480px;
-        height: 360px;
+        height: auto;
         transform: translate(300px, 310px);
       }
 
       &.c-2020 {
         width: 480px;
-        height: 460px;
+        height: auto;
         transform: translate(470px, -270px);
       }
 
       &.c-2021 {
         width: 480px;
-        height: 560px;
+        height: auto;
         transform: translate(640px, 236px);
       }
 
       &.c-2022 {
         width: 300px;
-        height: 150px;
+        height: auto;
         transform: translate(900px, -80px);
       }
     }

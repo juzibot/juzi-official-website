@@ -546,24 +546,55 @@ body {
   font-family: PingFang SC;
   font-style: normal;
   font-size: 16px;
-  color: #0555ff !important;
+  color: #0555ff;
   transition: all 0.3s;
+
+  &.has-bg {
+    color: #0555ff;
+
+    &:hover {
+      color: #4697f5;
+    }
+  }
+
+  &.no-bg {
+    color: #fff;
+
+    &:hover {
+      color: #999;
+    }
+  }
 
   &.round {
     height: 36px;
     padding: 4px 16px;
     border-radius: 18px;
-    border: 1px solid #0555ff;
     font-size: 16px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
 
-    &:hover {
-      background-color: #0555ff;
-      color: #fff !important;
+    &.has-bg {
+      color: #0555ff;
+      border: 1px solid #0555ff;
+  
+      &:hover {
+        background-color: #0555ff;
+        color: #fff !important;
+      }
+    }
+  
+    &.no-bg {
+      color: #fff;
+      border: 1px solid #fff;
+  
+      &:hover {
+        background-color: #0555ff;
+        border: 1px solid #0555ff;
+        color: #fff !important;
+      }
     }
   }
 }
@@ -695,10 +726,6 @@ button.white-button-pure-en {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  .container {
-    width: 1200px;
-  }
 }
 
 .not-found-page {

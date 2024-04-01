@@ -48,8 +48,8 @@ const FooterBarWithButton = (props: Props = {}) => {
   );
   const mobileTitle = (
     <div className={cls('title')}>
-      <div className='text-center text-[28px]'>{t('mobile-title-1')}</div>
-      <div style={{ fontSize: i18n.language === 'en' ? 17 : 20 }}>
+      <div className='text-center text-[28px]' style={{marginLeft: i18n.language === 'en' ? 0 : 20 }}>{t('mobile-title-1')}</div>
+      <div style={{ fontSize: i18n.language === 'en' ? "60%" : 20 }}>
         <span>{t('mobile-title-2')}</span>
         <span className="text-[#EF3BFB]" style={{marginLeft: i18n.language === 'en' ? 0: 6}}>{t('mobile-title-3')}</span>
       </div>

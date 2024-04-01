@@ -456,7 +456,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2017') {
     return (
-      <div className='cover-dialog reverse hover c-2017' style={{height: i18n.language === 'en' ? 282 : 258 }}>
+      <div className='cover-dialog reverse hover c-2017'>
         <strong>2017.03</strong>
         <div>{t('2017.03-text')}</div>
         <strong>2017.04</strong>
@@ -470,7 +470,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2018') {
     return (
-      <div className='cover-dialog hover c-2018' style={{height: i18n.language === 'en' ? 420 : 440 }}>
+      <div className='cover-dialog hover c-2018'>
         <strong>2018.01</strong>
         <div>
           {t('2018.01-text')}
@@ -497,7 +497,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2019') {
     return (
-      <div className='cover-dialog reverse hover c-2019' style={{height: i18n.language === 'en' ? 375 : 360 }}>
+      <div className='cover-dialog reverse hover c-2019'>
         <strong>2019.01</strong>
         <div>{t('2019.01-text')}</div>
         <strong>2019.04</strong>
@@ -517,7 +517,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2020') {
     return (
-      <div className='cover-dialog hover c-2020' style={{height: i18n.language === 'en' ? 465 : 460 }}>
+      <div className='cover-dialog hover c-2020'>
         <strong>2020.03</strong>
         <div>
           {t('2020.03-text')}
@@ -543,7 +543,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2021') {
     return (
-      <div className='cover-dialog reverse hover c-2021' style={{height: i18n.language === 'en' ? 545 : 560 }}>
+      <div className='cover-dialog reverse hover c-2021'>
         <strong>2021.01</strong>
         <div>{t('2021.01-text')}</div>
         <strong>2021.03</strong>
@@ -575,7 +575,7 @@ const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
   }
   if (flag === '2022') {
     return (
-      <div className='cover-dialog hover c-2022' style={{height: i18n.language === 'en' ? 170 : 150 }}>
+      <div className='cover-dialog hover c-2022'>
         <strong>2022.01</strong>
         <div>{t('2022.01-text')}</div>
         <strong>2022.03</strong>

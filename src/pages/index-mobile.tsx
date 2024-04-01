@@ -20,7 +20,7 @@ const MobileIndexPage: NextPage<{}> = () => {
 
       <div>
         <img className='w-full' src="/_images/image-page/index-top-bg-m.png" alt='' />
-        <div className="absolute top-[80px] w-full font-sans">
+        <div className="absolute top-[2.9%] w-full font-sans">
           <div className="text-center text-[22px] text-white">{t('title')}</div>
             {isZh ? (
               <>
