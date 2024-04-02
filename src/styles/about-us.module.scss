@@ -367,7 +367,7 @@
 
       &.c-2015 {
         width: 480px;
-        height: 220px;
+        height: auto;
         transform: translate(0, 24px);
 
         &::after {
@@ -377,8 +377,8 @@
 
       &.c-2017 {
         width: 480px;
-        height: 258px;
-        transform: translate(170px, 336px);
+        height: auto;
+        transform: translate(180px, 336px);
 
         &::before {
           left: 32px;
@@ -387,8 +387,8 @@
 
       &.c-2018 {
         width: 480px;
-        height: 440px;
-        transform: translate(130px, -206px);
+        height: auto;
+        transform: translate(152px, -180px);
 
         &::before {
           left: 32px;
@@ -397,26 +397,26 @@
 
       &.c-2019 {
         width: 480px;
-        height: 360px;
-        transform: translate(300px, 310px);
+        height: auto;
+        transform: translate(336px, 310px);
       }
 
       &.c-2020 {
         width: 480px;
-        height: 460px;
-        transform: translate(470px, -270px);
+        height: auto;
+        transform: translate(516px, -265px);
       }
 
       &.c-2021 {
         width: 480px;
-        height: 560px;
-        transform: translate(640px, 236px);
+        height: auto;
+        transform: translate(697px, 236px);
       }
 
       &.c-2022 {
         width: 300px;
-        height: 150px;
-        transform: translate(900px, -80px);
+        height: auto;
+        transform: translate(970px, -80px);
       }
     }
 
@@ -606,8 +606,9 @@
 
 .about-us-page {
   background-image: url('https://cdn-official-website.juzibot.com/images/about-us/bg.png');
-  min-height: 880px;
-  background-position: center;
+  min-height: 920px;
+  background-position-x: center;
+  background-position-y: top;
   background-repeat: no-repeat;
   background-size: 100%;
 
@@ -623,6 +624,7 @@
       min-height: 600px;
 
       h1 {
+        min-width: 1100px;
         font-family: 'PingFang SC';
         font-style: normal;
         font-weight: 600;
@@ -640,11 +642,11 @@
         line-height: 60px;
         text-align: center;
         color: #364256;
-        margin-top: -10px;
+        margin-top: -25px;
       }
 
       .info-box {
-        margin-top: 80px;
+        margin-top: 60px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -688,11 +690,12 @@
           font-size: 18px;
           line-height: 160%;
           color: #54657e;
+          min-width: 500px;
         }
 
         .right:lang(en) {
           font-weight: 300;
-          font-size: 17px;
+          font-size: 16px;
           line-height: 160%;
           color: #54657e;
         }

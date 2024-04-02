@@ -34,7 +34,14 @@ const Home: NextPage = () => {
     return (
       <div className='m-auto relative'>
         <Seo page="features-government" />
-        <img className='w-full' alt='' src='/_images/image-page/government-0.png' />
+        <img className='w-full' alt='' src='/_images/image-page/government-top.png' />
+        <div className="logos-wall">
+          <div className="container">
+            <h1 className="title" style={{fontSize: 20, lineHeight:2, padding: 8}}>{t('logos-wall-title')}</h1> 
+            <LogosWallNew />
+          </div>
+        </div>
+        <img className='w-full' style={{marginTop:-94}} alt='' src='/_images/image-page/government-middle.png' />
         <div className="wrapper appeal-bar-new">
           <div className="container !w-[100%]">
             <AppealBarNew isRed />
@@ -89,9 +96,10 @@ const Home: NextPage = () => {
       <div className="m-auto">
         <div className="logos-wall">
           <div className="container">
-            <h1 className="title">{t('logos-wall-title')}</h1> 
+            <h1 className="title" style={{marginLeft:140, marginBottom:-80}}>{t('logos-wall-title')}</h1> 
+            </div>
             <LogosWallNew />
-          </div>
+            <div className="container"></div>
         </div>
       </div>
 
@@ -104,7 +112,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="wrapper solution-page">
-        <div className="container">
+        <div className="container" style={{marginBottom:20}}>
           <SolutionPageNew />
         </div>
       </div>

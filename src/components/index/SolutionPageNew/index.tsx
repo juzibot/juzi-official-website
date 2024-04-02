@@ -100,7 +100,7 @@ const SolutionPage: NextPage = () => {
           imagePosition="right"
           imageUrl="https://cdn-official-website.juzibot.com/images/solution-08-divider.svg"
           dividerUrl="https://cdn-official-website.juzibot.com/images/solution-04-divider.svg"
-          style={{ transform: i18n.language === 'en' ? 'translateY(-40px)' : 'translateY(-62px)' }}
+          style={{ transform: i18n.language === 'en' ? 'translateY(-20px)' : 'translateY(-62px)' }}
         />
       </div>
     </>

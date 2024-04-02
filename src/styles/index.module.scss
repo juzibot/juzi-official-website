@@ -16,6 +16,7 @@
   font-size: 15px;
   height: 72px;
   color: #54657e;
+  white-space: nowrap;
 
   & {
     margin: 0 18px;
@@ -34,6 +35,13 @@
       margin: 0 10px !important;
     }
   }
+}
+
+.index-mobile {
+  background-image: url('/_images/image-page/index-top-bg-m.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: fit-content;
 }
 
 .index-page {

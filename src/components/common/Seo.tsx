@@ -19,7 +19,7 @@ const Seo: NextPage<NextSeoProps & { page?: string; keywords?: string }> = (
         openGraph={{
           title: page ? t(`${page}-title`) : t('homepage-title'),
           type: 'website',
-          url: 'https://juzibot.com',
+          url: 'https://juzibot.com/',
           site_name: '句子互动 JuziBot',
           images: [
             {

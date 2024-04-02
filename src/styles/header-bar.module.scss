@@ -5,10 +5,13 @@
   height: 64px;
   transition: border-bottom 0.3s;
   overflow: hidden;
+  width: 100%;
 
   .logo {
     user-select: none;
+    margin-left: calc(10vw - 50px);
     margin-right: 24px;
+    width: max-content;
   }
 
   &::before {
@@ -17,12 +20,17 @@
     left: -10px;
     position: absolute;
     height: 84px;
-    top: -10px;
+    top: -21px;
     background-color: rgba(255, 255, 255, 0.8);
     filter: blur(0px);
     backdrop-filter: blur(10px);
     z-index: -1;
     transition: all 0.3s;
+  }
+
+  &.about-us::before,
+  &.feature-page-header::before {
+    background-color: unset !important;
   }
 
   &.opacity::before {
@@ -31,30 +39,42 @@
     background-color: rgba(255, 255, 255, 0.9);
   }
 
-  &.about-us::before,
-  &.feature-page-header::before {
-    background-color: unset !important;
-  }
-
   &.has-bg::before {
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
 
+  &.no-bg::before {
+    filter: unset !important;
+    backdrop-filter: unset !important;
+    background-color: transparent !important;
+  }
+
   .container {
-    width: 100%;
     height: 64px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
 
-    .header-left,
+    .header-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: center;
+      margin-right: 120px;
+    }
     .header-right {
       display: flex;
+      position: fixed;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      margin-top: -4px;
+
+      &.zh {
+        margin-inline-start: calc(87vw - 190px);
+      }
+
+      &.en {
+        margin-inline-start: calc(88vw - 265px);
+      }
     }
 
     .header-right .menu-item {
@@ -85,10 +105,6 @@
     height: 84px;
     top: -10px;
     background-color: transparent;
-    // filter: blur(10px);
-    // backdrop-filter: blur(10px);
-    z-index: -1;
-    // transition: all 0.01s;
   }
 
   &.opacity::before {
@@ -115,7 +131,14 @@
     align-items: center;
     overflow: hidden;
 
-    .header-left,
+    .header-left {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-right: 80px;
+    }
+
     .header-right {
       display: flex;
       flex-direction: row;
@@ -351,6 +374,12 @@
   &.about-us {
     height: 154px;
     transform: translate(-30px, -6px);
+  }
+
+  &.about-us-extended {
+    height: 154px;
+    width: 215px;
+    transform: translate(-60px, -6px);
   }
 
   .flex-row {

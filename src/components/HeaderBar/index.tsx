@@ -12,6 +12,7 @@ import { useRouter } from 'next/router';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
 import { useShowModal } from '@src/utils/showModal';
 import { ContactUsOption } from '../common/emitter';
+import MobileMenu from '../HeaderBarMobile/mobileMenu';
 
 const MenuItem: NextPage<{
   iconUrl?: string;
@@ -238,6 +239,7 @@ const ProductMenu: NextPage = () => {
 };
 
 const AboutUsMenu: NextPage = () => {
+  const { t } = useTranslation(['common']);
   return (
     <div className="dropdown-menu about-us">
       <div className="box">
@@ -246,14 +248,53 @@ const AboutUsMenu: NextPage = () => {
           // hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16-o.svg"
           href="/about-us"
         >
-          公司介绍
+          {t('about')}
         </MenuItem>
         <MenuItem
           // iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17.svg"
           // hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17-o.svg"
           href="/culture"
         >
-          公司文化
+          {t('about-culture')}
+        </MenuItem>
+      </div>
+    </div>
+  );
+};
+
+const AboutUsExtendedMenu: NextPage = () => {
+  const { t, i18n } = useTranslation(['common']);
+  const isZh = i18n.language === 'zh';
+
+  return (
+    <div className="dropdown-menu about-us-extended">
+      <div className="box">
+        <MenuItem
+          // iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16.svg"
+          // hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/16-o.svg"
+          href="/about-us"
+        >
+          {t('about')}
+        </MenuItem>
+        {isZh ? (
+        <><MenuItem
+            // iconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17.svg"
+            // hoverIconUrl="https://cdn-official-website.juzibot.com/images/icons/header-bar/17-o.svg"
+            href="/culture"
+          >
+            {t('about-culture')}
+          </MenuItem>
+          <MenuItem href="/chatbot/practice-guide">
+            {t('chatbot')}
+          </MenuItem>
+          <MenuItem href="https://blog.juzibot.com/">
+            {t('course')}
+          </MenuItem>
+          </>
+        ) : null
+        }
+        <MenuItem href="https://wechaty.js.org/">
+          {t('developer')}
         </MenuItem>
       </div>
     </div>
@@ -269,10 +310,23 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
   menu,
 }) => {
   const [menuVisible, toggleMenuVisible] = useState(false);
+  const { pathname } = useRouter();
+  const [borderBottomVisible, setBorderBottomVisible] = useState(false);
   const router = useRouter();
   useEffect(() => {
     toggleMenuVisible(false);
   }, [router.asPath]);
+
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener('scroll', () => {
+        setBorderBottomVisible(window.scrollY > 0);
+      });
+      setBorderBottomVisible(window.scrollY > 0);
+    }
+  }, []);
+  const isMainPageDefault = pathname === '/' && !borderBottomVisible;
+  const textColor = isMainPageDefault ? '#fff' : '#54657e'
 
   return href ? (
     <div
@@ -286,6 +340,9 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
           draggable="false"
           target={linkTarget || '_self'}
           onClick={onClick}
+          style={{
+            color: textColor,
+          }}
         >
           <span>{children}</span>
           {hasArrow ? (
@@ -295,11 +352,11 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
               viewBox="0 0 10 6"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              style={{ marginLeft: 4 }}
+              style={{ marginLeft: 4,  color: textColor}}
             >
               <path
                 d="M4.99999 3.78132L8.29999 0.481323L9.24266 1.42399L4.99999 5.66666L0.757324 1.42399L1.69999 0.481323L4.99999 3.78132Z"
-                fill="#54657E"
+                fill={textColor}
               />
             </svg>
           ) : null}
@@ -313,7 +370,7 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
       onMouseMove={() => toggleMenuVisible(true)}
       className="menu-button"
     >
-      <span className="menu-item" draggable="false" onClick={onClick}>
+      <span className="menu-item" draggable="false" onClick={onClick} style={{color: textColor}}>
         <span>{children}</span>
         {hasArrow ? (
           <svg
@@ -322,11 +379,11 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
             viewBox="0 0 10 6"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            style={{ marginLeft: 4 }}
+            style={{ marginLeft: 4, color: textColor}}
           >
             <path
               d="M4.99999 3.78132L8.29999 0.481323L9.24266 1.42399L4.99999 5.66666L0.757324 1.42399L1.69999 0.481323L4.99999 3.78132Z"
-              fill="#54657E"
+              fill={textColor}
             />
           </svg>
         ) : null}
@@ -369,7 +426,19 @@ const HeaderBar: NextPage = () => {
   const isZh = i18n.language === 'zh';
   const { pathname } = useRouter();
   const showModal = useShowModal();
+  const windowWidthMedium = (isZh ? 1262 : 1065);
+  const windowWidthSmall = (isZh ? 878 : 940);
 
+  const [windowWidth, setWindowWidth] = useState(1600);
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener('resize', () =>
+        setWindowWidth(window.innerWidth)
+      );
+      setWindowWidth(window.innerWidth)
+    }
+  }, []);
+  
   useEffect(() => {
     for (const path in headerbarExtraClassMap) {
       if (pathname.includes(path)) {
@@ -383,6 +452,7 @@ const HeaderBar: NextPage = () => {
       window.addEventListener('scroll', () => {
         setBorderBottomVisible(window.scrollY > 0);
       });
+      setBorderBottomVisible(window.scrollY > 0);
       setIsChrome(isBrowserChrome());
     }
   }, []);
@@ -391,12 +461,15 @@ const HeaderBar: NextPage = () => {
     location.href = host + (isZh ? '/en' : '/zh');
   }
 
+  const isMainPageDefault = pathname === '/' && !borderBottomVisible;
+
   return (
     <div className={i18n.language}>
       <header
-        className={`wrapper header-bar ${
-          !isChrome ? 'opacity' : ''
-        } ${headerbarExtraClass} ${borderBottomVisible ? 'has-bg' : 'has-bg'}`}
+        className={`header-bar ${headerbarExtraClass} 
+        ${!isChrome ? 'opacity' : ''}
+        ${isMainPageDefault? 'no-bg' : 'has-bg'}
+        `}
         style={{
           borderBottom: borderBottomVisible
             ? '1px solid #eee'
@@ -410,17 +483,19 @@ const HeaderBar: NextPage = () => {
               alt="logo for wechat sharing"
             ></img>
           </div>
+
+
+        { windowWidth > windowWidthMedium ? (
           <menu className="header-left">
-            <a className="logo" href={host}>
+            <a className="logo" href={`${host}/${i18n.language}`}>
               <Image
                 alt="logo"
-                src="https://cdn-official-website.juzibot.com/images/logo.png"
-                width={106}
+                src={ isMainPageDefault ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
+                width={100}
                 height={64}
                 draggable="false"
               ></Image>
             </a>
-            {/* {isZh && <WeworkBar />} */}
             <HeaderMenu hasArrow menu={<ProductMenu />}>
               {t('products')}
             </HeaderMenu>
@@ -459,8 +534,45 @@ const HeaderBar: NextPage = () => {
             </HeaderMenu>
             }
           </menu>
+        ) :
+          <menu className="header-left">
+            <a className="logo" href={`${host}/${i18n.language}`}>
+              <Image
+                alt="logo"
+                src={ isMainPageDefault ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
+                width={100}
+                height={64}
+                draggable="false"
+              ></Image>
+            </a>
+            { windowWidth > windowWidthSmall ? (
+              <>
+              <HeaderMenu hasArrow menu={<ProductMenu />}>
+                {t('products')}
+              </HeaderMenu>
+              {isZh ? (
+                <HeaderMenu hasArrow menu={<SolutionsMenu />}>
+                  {t('solutions')}
+                </HeaderMenu>
+              ) : 
+                <HeaderMenu href="/features/customer" linkTarget="_self">
+                  {t('solutions')}
+                </HeaderMenu>
+              }
+              <HeaderMenu href="https://chat.juzibot.com/" linkTarget="_blank">
+              {t('gpt')}
+              </HeaderMenu>
+              <HeaderMenu hasArrow menu={<AboutUsExtendedMenu />}>
+                  {t('about')}
+              </HeaderMenu>
+              </>
+            ):
+              <MobileMenu/>
+            }
+          </menu>
+        } 
 
-          <menu className="header-right">
+          <menu className={`header-right ${!isZh ? 'en' : 'zh'}`}>
             <HeaderMenu
               linkTarget="_blank"
               onClick={() => {
@@ -472,7 +584,7 @@ const HeaderBar: NextPage = () => {
             </HeaderMenu>
               <Link href="#">
                 <a
-                  className="menu-item primary-link"
+                  className={`menu-item primary-link ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
                   draggable="false"
                   onClick={() => {
                     let qrCode: ContactUsOption['qrCode'] = 'sf-01';
@@ -489,7 +601,7 @@ const HeaderBar: NextPage = () => {
               </Link>
 
             <div
-              className="menu-item primary-link round"
+              className={`menu-item primary-link round ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
               draggable="false"
               onClick={() => {
                 let qrCode: ContactUsOption['qrCode'] = 'sf-01';
