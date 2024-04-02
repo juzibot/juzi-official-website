@@ -652,7 +652,7 @@ const GrowthWall: NextPage = () => {
         <ExtraDialog flag={extraPopopVisible ? flag : ''} />
         <Popup
           title='2016.05'
-          x={110}
+          x={125}
           y={104}
           lineY={182}
           flag='2016-05'
@@ -677,9 +677,9 @@ const GrowthWall: NextPage = () => {
 
         <Popup
           title='2018.12'
-          x={454}
-          y={88}
-          lineY={180}
+          x={480}
+          y={93}
+          lineY={182}
           style={{ width: 260 }}
           flag='2018-12'
           flagSetter={setFlag}
@@ -693,7 +693,7 @@ const GrowthWall: NextPage = () => {
           isReverse
           x={624}
           y={168}
-          lineY={156}
+          lineY={160}
           style={{ width: 128 }}
           flag='2019-01'
           flagSetter={setFlag}
@@ -706,7 +706,7 @@ const GrowthWall: NextPage = () => {
           title='2020.03'
           x={792}
           y={-100}
-          lineY={310}
+          lineY={328}
           style={{ width: 280 }}
           flag='2020-03'
           flagSetter={setFlag}
@@ -725,9 +725,9 @@ const GrowthWall: NextPage = () => {
 
         <Popup
           title='2021.07'
-          x={964}
-          y={66}
-          lineY={0}
+          x={1000}
+          y={70}
+          lineY={159}
           style={{ width: 310 }}
           isReverse
           flag='2021-07'
@@ -745,9 +745,9 @@ const GrowthWall: NextPage = () => {
 
         <Popup
           title='2022.01'
-          x={1093}
-          y={-62}
-          lineY={160}
+          x={1140}
+          y={-40}
+          lineY={145}
           style={{ width: 230 }}
           flag='2022-01'
           flagSetter={setFlag}
@@ -758,104 +758,104 @@ const GrowthWall: NextPage = () => {
 
         <Dot
           x={16}
-          y={338}
+          y={344}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
           flag='2015'
         />
         <Dot
-          x={96}
-          y={338}
+          x={111}
+          y={344}
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
           flag='2016-05'
         />
         <Dot
-          x={186}
-          y={336}
+          x={198}
+          y={343}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
           flag='2017'
         />
         <Dot
           x={270}
-          y={335}
+          y={342}
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
           flag='2017-12'
         />
         <Dot
-          x={356}
-          y={330}
+          x={380}
+          y={337}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
           flag='2018'
         />
         <Dot
-          x={440}
-          y={325}
+          x={466}
+          y={331}
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
           flag='2018-12'
         />
         <Dot
-          x={526}
-          y={315}
+          x={563}
+          y={321}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
           flag='2019'
         />
         <Dot
-          x={610}
-          y={304}
+          x={611}
+          y={315}
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
           flag='2019-01'
         />
         <Dot
-          x={696}
-          y={286}
+          x={744}
+          y={290}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
           flag='2020'
         />
         <Dot
-          x={780}
-          y={266}
+          x={779}
+          y={282}
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
           flag='2020-03'
         />
         <Dot
-          x={866}
+          x={925}
           y={237}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
           flag='2021'
         />
         <Dot
-          x={950}
-          y={207}
+          x={986}
+          y={216}
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
           flag='2021-07'
         />
         <Dot
-          x={1038}
-          y={170}
+          x={1107}
+          y={165}
           currentFlag={extraPopopVisible ? flag : ''}
           flagSetter={setFlag}
           flag='2022'
         />
         <Dot
-          x={1080}
-          y={152}
+          x={1126}
+          y={158}
           isWhite
           currentFlag={flag}
           flagSetter={setFlag}
@@ -980,8 +980,9 @@ const AboutUsPage: NextPage = () => {
           <AboutAiNativePage />
         </div>
       </div>
+      <div className='horizontal-line'></div>
       <div className='wrapper growth-wall'>
-            <div className='container'>
+            <div className='container w-[1200]'>
               <GrowthWall />
             </div>
           </div>

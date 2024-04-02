@@ -41,8 +41,15 @@ const CustomerAcquisitionPage: NextPage = () => {
           </>
         ): // English mobile
           <>
-          <img className='w-full' alt='' src='/_images/image-page/customer-0-en.png'/><div
-          ></div><div className="wrapper appeal-bar">
+          <img className='w-full' alt='' src='/_images/image-page/customer-top-en.png'/><div>
+          <div className="logos-wall">
+            <div className="container">
+              <h1 className="title" style={{fontSize: 20, lineHeight:2, padding: 8}}>{t('logos-wall-title')}</h1> 
+              <LogosWallNew />
+            </div>
+          </div>
+          <img className='w-full' style={{marginBottom:30, marginTop:-94}} alt='' src='/_images/image-page/customer-middle-en.png'/></div>
+            <div className="wrapper appeal-bar">
               <div className="container !w-[100%]">
                 <FooterBarWithButton
                   contactUsOption={{ qrCode: 'sf-04' }} />
@@ -116,7 +123,7 @@ const CustomerAcquisitionPage: NextPage = () => {
           </div>
 
           <div className="wrapper solution-page">
-            <div className="container">
+            <div className="container" style={{marginBottom:20}}>
               <SolutionPageNew />
             </div>
           </div>

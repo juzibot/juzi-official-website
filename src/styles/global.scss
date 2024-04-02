@@ -726,6 +726,7 @@ button.white-button-pure-en {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
 }
 
 .not-found-page {
@@ -1021,4 +1022,13 @@ button.white-button-pure-en {
       }
     }
   }
+}
+
+.horizontal-line {
+  background-color: #DDE3EA;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  margin-left: 4%;
+  width: 92%;
+  height: 1px;
 }

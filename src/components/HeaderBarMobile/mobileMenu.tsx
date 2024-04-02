@@ -1,15 +1,29 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import ContactUsSimpleModal from '../ContactUsSimpleModal';
 import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
+import { useRouter } from 'next/router';
+import { useMediaQuery } from '@react-hookz/web';
 
 const MobileMenu = () => {
+  const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const { t, i18n } = useTranslation('common');
   const isZh = i18n.language === 'zh';
   const [showMenu, setShowMenu] = useState(false);
   const [showContactModal, setShowContactModal] = useState(false);
+  const { pathname } = useRouter();
+  const [borderBottomVisible, setBorderBottomVisible] = useState(false);
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener('scroll', () => {
+        setBorderBottomVisible(window.scrollY > 0);
+      });
+      setBorderBottomVisible(window.scrollY > 0);
+    }
+  }, []);
+
   return (
     <div className='relative'>
       <ContactUsSimpleModal open={showContactModal} onCancel={() => setShowContactModal(false)} />
@@ -17,6 +31,7 @@ const MobileMenu = () => {
         className='ml-4 w-[20px] h-[20px]'
         src='https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/782f029c-4f82-44ed-ba38-959f5ea573cd/%E6%9B%B4%E5%A4%9A.png'
         alt=''
+        style={{filter: pathname === '/' && !borderBottomVisible && !isSmallDevice ? 'brightness(20)' : ''}}
         onClick={() => setShowMenu(true)}
       />
       {showMenu && createPortal(

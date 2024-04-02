@@ -40,8 +40,7 @@ const Home: NextPage = () => {
       <Seo page="homepage" />
       <div
         style={{ backgroundImage: 'url(/_images/image-page/index-top-bg-3.png)'}}
-        className="h-[calc(100vh-0px)] bg-cover flex justify-center items-center"
-        
+        className="h-[calc(100vh-0px)] bg-cover flex justify-center items-center" 
       >
         <div className="flex flex-col justify-center items-center mt-[180px]">
             {/* <img src="/_images/image-page/index-top-logo.png" alt='' className='w-[1200px]' /> */}
