@@ -325,7 +325,8 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
       setBorderBottomVisible(window.scrollY > 0);
     }
   }, []);
-  const textColor = pathname === '/' && !borderBottomVisible ? '#fff' : '#54657e'
+  const isMainPageDefault = pathname === '/' && !borderBottomVisible;
+  const textColor = isMainPageDefault ? '#fff' : '#54657e'
 
   return href ? (
     <div
@@ -340,7 +341,7 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
           target={linkTarget || '_self'}
           onClick={onClick}
           style={{
-            color: pathname === '/' && !borderBottomVisible ? '#fff' : '#54657e',
+            color: textColor,
           }}
         >
           <span>{children}</span>
@@ -369,7 +370,7 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
       onMouseMove={() => toggleMenuVisible(true)}
       className="menu-button"
     >
-      <span className="menu-item" draggable="false" onClick={onClick} style={{color: pathname === '/' && !borderBottomVisible ? '#fff' : '#54657e'}}>
+      <span className="menu-item" draggable="false" onClick={onClick} style={{color: textColor}}>
         <span>{children}</span>
         {hasArrow ? (
           <svg
@@ -460,14 +461,14 @@ const HeaderBar: NextPage = () => {
     location.href = host + (isZh ? '/en' : '/zh');
   }
 
+  const isMainPageDefault = pathname === '/' && !borderBottomVisible;
+
   return (
     <div className={i18n.language}>
       <header
         className={`header-bar ${headerbarExtraClass} 
-        ${
-          !isChrome ? 'opacity' : ''
-        }
-        ${pathname === '/' && !borderBottomVisible ? 'no-bg' : 'has-bg'}
+        ${!isChrome ? 'opacity' : ''}
+        ${isMainPageDefault? 'no-bg' : 'has-bg'}
         `}
         style={{
           borderBottom: borderBottomVisible
@@ -489,7 +490,7 @@ const HeaderBar: NextPage = () => {
             <a className="logo" href={`${host}/${i18n.language}`}>
               <Image
                 alt="logo"
-                src={ pathname === '/' && !borderBottomVisible ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
+                src={ isMainPageDefault ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
                 width={100}
                 height={64}
                 draggable="false"
@@ -538,7 +539,7 @@ const HeaderBar: NextPage = () => {
             <a className="logo" href={`${host}/${i18n.language}`}>
               <Image
                 alt="logo"
-                src={ pathname === '/' && !borderBottomVisible ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
+                src={ isMainPageDefault ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
                 width={100}
                 height={64}
                 draggable="false"
@@ -583,7 +584,7 @@ const HeaderBar: NextPage = () => {
             </HeaderMenu>
               <Link href="#">
                 <a
-                  className={`menu-item primary-link ${pathname === '/' && !borderBottomVisible ? 'no-bg' : 'has-bg'}`}
+                  className={`menu-item primary-link ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
                   draggable="false"
                   onClick={() => {
                     let qrCode: ContactUsOption['qrCode'] = 'sf-01';
@@ -600,7 +601,7 @@ const HeaderBar: NextPage = () => {
               </Link>
 
             <div
-              className={`menu-item primary-link round ${pathname === '/' && !borderBottomVisible ? 'no-bg' : 'has-bg'}`}
+              className={`menu-item primary-link round ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
               draggable="false"
               onClick={() => {
                 let qrCode: ContactUsOption['qrCode'] = 'sf-01';
