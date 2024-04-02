@@ -109,7 +109,7 @@ const CustomerAcquisitionPage: NextPage = () => {
 
           <div className="m-auto">
             <div className="logos-wall">
-              <div className="container">
+              <div className="container" style={{marginLeft:60}}>
                 <h1 className="title">{t('logos-wall-title')}</h1> 
                 <LogosWallNew />
               </div>
