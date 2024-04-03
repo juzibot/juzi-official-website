@@ -49,7 +49,7 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
         <span>
           <span className='text-[16px]'>{t('appeal-1')}</span>
           <br />
-          <span className='text-[14px]'>{t('appeal-2')}</span>
+          <span className='text-[12px]'>{t('appeal-2')}</span>
         </span>
       ),
       ai: (
