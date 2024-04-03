@@ -29,17 +29,17 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
     return {
       default: (
         <>
-          <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? '2.5vw' : '3.5vw' }}>{t('contact-footer')}</p>
+          <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 10 : 16 }}>{t('contact-footer')}</p>
         </>
       ),
       ai: <>
-            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? '3vw' : '4vw' }}>{t('contact-footer-1')}</p>
-            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? '3vw' : '4vw' }}>{t('contact-footer-2')}</p>
+            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-1')}</p>
+            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-2')}</p>
           </>,
       rpa: <>
-            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? '3vw' : '4vw' }}>{t('contact-footer-1')}</p>
-            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? '3vw' : '4vw' }}>{t('contact-footer-2')}</p>
-          </>,
+            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-1')}</p>
+            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-2')}</p>
+          </>
   }}
 
   const AppealMap = () => {
@@ -47,9 +47,9 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
     return {
       default: (
         <span>
-          <span className='text-[3.8vw]'>{t('appeal-1')}</span>
+          <span className='text-[16px]'>{t('appeal-1')}</span>
           <br />
-          <span className='text-[3vw]'>{t('appeal-2')}</span>
+          <span className='text-[14px]'>{t('appeal-2')}</span>
         </span>
       ),
       ai: (
