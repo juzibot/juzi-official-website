@@ -23,7 +23,7 @@ const MobileIndexPage: NextPage<{}> = () => {
             {isZh ? (
               <>
               <div className="container">
-                <div className="text-center text-[6vw] text-white">{t('title')}</div>
+                <div className="text-center text-[6vw] text-white ml-[1vw] mr-[1vw]">{t('title')}</div>
                 <div className="flex text-[5vw] font-medium">
                 <span className="w-1/2 flex-shrink-0 text-white text-right mr-[1vw]">{t('subtitle')}</span><Typewriter
                   options={{
@@ -38,7 +38,7 @@ const MobileIndexPage: NextPage<{}> = () => {
                 </>
                 ) : 
                 <>
-                <div className="text-center text-[5vw] text-white mt-[calc(2vw)]">{t('title')}</div>
+                <div className="text-center text-[5vw] text-white mt-[calc(2vw)] ml-[1vw] mr-[1vw]">{t('title')}</div>
                 <div className="flex text-[4vw] font-medium">
                 <span className="w-[40%] flex-shrink-0 text-white text-right mr-[1vw]">{t('subtitle')}</span><Typewriter
                 options={{

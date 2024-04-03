@@ -48,12 +48,12 @@ const CustomerAcquisitionPage: NextPage = () => {
             {/* 文字 */}
             { isZh ? (
               <div className="w-full font-sans">
-              <div className="text-center text-[19px] text-block">{t('ai-title')}</div>
-              <div className="flex text-[29px] font-medium">
+              <div className="text-center text-[5vw] text-block">{t('ai-title')}</div>
+              <div className="flex text-[7vw] font-medium">
                 <span className="w-1/2 flex-shrink-0 text-block text-right">{t('ai-subtitle')}</span>
                 <Typewriter
                   options={{
-                    wrapperClassName: 'text-[29px] text-[#DA37E8]',
+                    wrapperClassName: 'text-[7vw] text-[#DA37E8]',
                     cursorClassName: 'text-[#DA37E8]',
                     strings: ["数字销售", "数字 SDR", "数字网格员", "数字民警", "数字电力管家"],
                     autoStart: true,
@@ -64,12 +64,12 @@ const CustomerAcquisitionPage: NextPage = () => {
             </div>
             ) : 
             <div className="w-full font-sans">
-              <div className="text-center text-[19px] text-block">{t('ai-title')}</div>
-              <div className="flex text-[18px] font-medium">
-                <span className="w-[51%] flex-shrink-0 text-block text-right mr-1">{t('ai-subtitle')}</span>
+              <div className="text-center text-[4.5vw] text-block">{t('ai-title')}</div>
+              <div className="flex text-[4.6vw] font-medium">
+                <span className="w-[48%] flex-shrink-0 text-block text-right mr-[1vw]">{t('ai-subtitle')}</span>
                 <Typewriter
                   options={{
-                    wrapperClassName: 'text-[18px] text-[#DA37E8]',
+                    wrapperClassName: 'text-[4.6vw] text-[#DA37E8]',
                     cursorClassName: 'text-[#DA37E8]',
                     strings: ["Customer Inquiries", "Complaints", "Subscriptions", "Product Inquiries", "Post-Sale Follow-Up"],
                     autoStart: true,
@@ -152,7 +152,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       ): <img className='w-full' style={{marginTop: -60}} alt='' src='/_images/image-page/ai-middle-20240206-en.png' />
       }
       <div className="wrapper appeal-bar">
-        <div className="container">
+        <div className="container !w-[100%]">
           <FooterBarWithButton
             contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}
           />

@@ -354,25 +354,25 @@ const CulturePage: NextPage = () => {
       <Seo page="culture" />
       <div className="wrapper culture-hero-page">
         <div className={`bg ${!isChrome && 'moz'}`}></div>
-        <div className="container">
+        <div className="container" style={{minWidth:1200}}>
           <CautureHeroPage />
         </div>
       </div>
 
       <div className="wrapper value-page">
-        <div className="container">
+        <div className="container" style={{minWidth:1200}}>
           <ValuePage />
         </div>
       </div>
 
       <div className="wrapper video-page">
-        <div className="container">
+        <div className="container" style={{minWidth:1200}}>
           <VideoPage />
         </div>
       </div>
 
       <div className="wrapper star-staff">
-        <div className="container" id="scene">
+        <div className="container" id="scene" style={{minWidth:1200}}>
           <StarStaffPage
             options={starStaffData}
             currentIndex={currentIndex}
@@ -411,7 +411,7 @@ const CulturePage: NextPage = () => {
       </div>
 
       <div className="wrapper about-appeal">
-        <div className="container" style={{ marginTop: 100 }}>
+        <div className="container" style={{ marginTop: 100, minWidth:1200 }}>
           <AboutUsAppealBar />
         </div>
       </div>

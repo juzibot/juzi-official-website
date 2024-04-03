@@ -34,14 +34,15 @@ const HeaderBarMobile: NextPage = () => {
       )}
     >
       <div className='h-[64px] flex items-center'>
+      <a className="logo" href={`${host}/${i18n.language}`}>
         <Image
-          onClick={changeLanguage}
           alt='logo'
           src='https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/e454f977-c304-49cd-a9a4-989a49237a54/%E5%AE%98%E7%BD%91logo%201%20(1).png'
           width={106}
           height={30}
           draggable='false'
         />
+      </a>
       </div>
       <div className='text-[#54657E] font-medium flex'>
         <span className='inline-flex items-center' onClick={changeLanguage}>

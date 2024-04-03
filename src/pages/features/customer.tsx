@@ -117,19 +117,19 @@ const CustomerAcquisitionPage: NextPage = () => {
           </div>
       
           <div className="wrapper index-page">
-            <div className="container">
+            <div className="container" style={{minWidth:1200}}>
               <HeroPageNew />
             </div>
           </div>
 
           <div className="wrapper solution-page">
-            <div className="container" style={{marginBottom:20}}>
+            <div className="container" style={{marginBottom:20, minWidth:1200}}>
               <SolutionPageNew />
             </div>
           </div>
 
           <div className="wrapper appeal-bar">
-            <div className="container">
+            <div className="container" style={{minWidth:1200}}>
               <FooterBarWithButton
                 contactUsOption={{ qrCode: 'sf-04' }} />
             </div>

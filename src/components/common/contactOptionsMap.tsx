@@ -98,7 +98,7 @@ export const AppealMap = () => {
       <span>
         <span style={{ fontSize: i18n.language === 'en' ? 13 : 18 }}>{t('appeal-1')}</span>
         <br />
-        <span className='text-[16px]'>{t('appeal-2')}</span>
+        <span className='text-[3vw]'>{t('appeal-2')}</span>
       </span>
     ),
 
