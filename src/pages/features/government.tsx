@@ -96,7 +96,7 @@ const Home: NextPage = () => {
       <div className="m-auto">
         <div className="logos-wall">
           <div className="container">
-            <h1 className="title" style={{marginLeft:140, marginBottom:-80}}>{t('logos-wall-title')}</h1> 
+            <h1 className="title" style={{marginLeft:'8vw', marginBottom:-80}}>{t('logos-wall-title')}</h1> 
             </div>
             <LogosWallNew />
             <div className="container"></div>
@@ -106,19 +106,19 @@ const Home: NextPage = () => {
 
       <Seo page="features-government" />
       <div className="wrapper index-page">
-        <div className="container">
+        <div className="container" style={{minWidth:1200}}>
           <HeroPageNew />
         </div>
       </div>
 
       <div className="wrapper solution-page">
-        <div className="container" style={{marginBottom:20}}>
+        <div className="container" style={{minWidth:1200, marginBottom:20}}>
           <SolutionPageNew />
         </div>
       </div>
 
       <div className="wrapper appeal-bar-new">
-        <div className="container">
+        <div className="container" style={{minWidth:1200}}>
           <AppealBarNew isRed />
         </div>
       </div>

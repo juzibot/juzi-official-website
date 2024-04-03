@@ -45,7 +45,7 @@ const MobileMenu = () => {
               className='mt-[16px] h-[188px] px-[28px]'
               style={{ borderBottom: '1px solid rgba(221, 227, 234, 0.5)' }}
             >
-              <div className='text-[17px] leading-[24px] mt-[24px] font-semibold text-[#364256]'>
+              <div className='text-[17px] leading-[24px] mt-[24px] font-bold text-[#364256]'>
                 {t('products')}
               </div>
               <Link href="/features/ai" passHref>
@@ -60,22 +60,24 @@ const MobileMenu = () => {
               </Link>
             </div>
             {isZh ? (
-              <div className='flex flex-col px-[28px] pt-[24px] pb-[32px] gap-[32px]'>
-              <div className='text-[17px] leading-[24px] mt-[24px] font-semibold text-[#364256]'>
-              {t('solutions')}
+              <div
+                className='mt-[16px] h-[218px] px-[28px]'
+              >
+              <div className='text-[17px] leading-[24px] mt-[24px] font-bold text-[#364256]'>
+                {t('solutions')}
               </div>
               <Link href="/features/government" passHref>
-                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] inline-block'>
+                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] mt-[32px] inline-block'>
                   政务解决方案
                 </div>
               </Link>
               <Link href="/features/internet" passHref>
-                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] inline-block'>
+                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] mt-[32px] inline-block'>
                   互联网解决方案
                 </div>
               </Link>
               <Link href="/features/customer" passHref>
-                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] inline-block'>
+                <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] mt-[32px] inline-block'>
                   消费品解决方案
                 </div>
               </Link>

@@ -971,18 +971,18 @@ const AboutUsPage: NextPage = () => {
     <div className={i18n.language}>
       <Seo page='about-us' />
       <div className='wrapper about-us-page'>
-        <div className='container'>
+        <div className='container' style={{minWidth:1200}}>
           <AboutUsHeroPage />
         </div>
       </div>
       <div className='wrapper about-us-page' style={{ background: 'unset' }}>
-        <div className='container'>
+        <div className='container' style={{minWidth:1200}}>
           <AboutAiNativePage />
         </div>
       </div>
       <div className='horizontal-line'></div>
       <div className='wrapper growth-wall'>
-            <div className='container'>
+            <div className='container' style={{minWidth:1200}}>
               <GrowthWall />
             </div>
           </div>
@@ -1002,21 +1002,21 @@ const AboutUsPage: NextPage = () => {
           </div>
 
           <div className='wrapper customer-display'>
-            <div className='container'>
+            <div className='container' style={{minWidth:1200}}>
               <CustomerDisplay />
             </div>
           </div>
         </>
       ) : null}
       <div className='wrapper certificates'>
-            <div className='container'>
+            <div className='container' style={{minWidth:1200}}>
               <Certificates />
             </div>
           </div>
       {isZh ? (
         <> 
           <div className='wrapper news'>
-            <div className='container'>
+            <div className='container' style={{minWidth:1200}}>
               <NewsPage />
             </div>
           </div>
@@ -1024,7 +1024,7 @@ const AboutUsPage: NextPage = () => {
         </>
       ) : null}
       <div className='wrapper about-appeal'>
-            <div className='container'>
+            <div className='container' style={{minWidth:1200}}>
               <AboutUsAppealBar />
             </div>
           </div>

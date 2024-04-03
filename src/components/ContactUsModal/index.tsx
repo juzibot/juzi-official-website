@@ -29,12 +29,17 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
     return {
       default: (
         <>
-          <p className="text-[#666666] mb-0"  style={{ fontSize: i18n.language === 'en' ? 10 : 16 }}>{t('contact-footer-1')}</p>
-          <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-2')}</p>
+          <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 10 : 16 }}>{t('contact-footer')}</p>
         </>
       ),
-      ai: <span>{t('contact-scan')}</span>,
-      rpa: <span>{t('contact-scan')}</span>,
+      ai: <>
+            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-1')}</p>
+            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-2')}</p>
+          </>,
+      rpa: <>
+            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-1')}</p>
+            <p className="text-[#666666] mb-0" style={{ fontSize: i18n.language === 'en' ? 12 : 16 }}>{t('contact-footer-2')}</p>
+          </>
   }}
 
   const AppealMap = () => {

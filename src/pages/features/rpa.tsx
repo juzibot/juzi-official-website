@@ -47,12 +47,12 @@ const CustomerAcquisitionPage: NextPage = () => {
             {/* 文字 */}
             { isZh ? (
             <div className="w-full font-sans">
-              <div className="text-center text-[18px] text-block">{t('rpa-title')}</div>
-              <div className="flex text-[29px] font-medium">
+              <div className="text-center text-[4.5vw] text-block">{t('rpa-title')}</div>
+              <div className="flex text-[7vw] font-medium">
                 <span className="w-1/2 flex-shrink-0 text-block text-right">{t('rpa-subtitle')}</span>
                 <Typewriter
                   options={{
-                    wrapperClassName: 'text-[29px] text-[#0555FF]',
+                    wrapperClassName: 'text-[7vw] text-[#0555FF]',
                     cursorClassName: 'text-[#0555FF]',
                     strings: ['企业微信', '微信客服', '微信公众号', '小程序', 'WhatsApp', '飞书', '5G消息', '小红书', '抖音'],
                     autoStart: true,
@@ -63,12 +63,12 @@ const CustomerAcquisitionPage: NextPage = () => {
             </div>
             ) : 
             <div className="w-full font-sans">
-              <div className="text-center text-[18px] text-block">{t('rpa-title')}</div>
-              <div className="flex text-[18px] font-medium">
-                <span className="w-[65%] flex-shrink-0 text-block text-right mr-2">{t('rpa-subtitle')}</span>
+              <div className="text-center text-[4.2vw] text-block">{t('rpa-title')}</div>
+              <div className="flex text-[5vw] font-medium">
+                <span className="w-[67%] flex-shrink-0 text-block text-right mr-[2vw]">{t('rpa-subtitle')}</span>
                 <Typewriter
                   options={{
-                    wrapperClassName: 'text-[18px] text-[#0555FF]',
+                    wrapperClassName: 'text-[5vw] text-[#0555FF]',
                     cursorClassName: 'text-[#0555FF]',
                     strings: ['WeCom', 'WeChat', 'WhatsApp', 'Lark', '5G SMS', 'Instagram', 'TikTok'],
                     delay: 80,
