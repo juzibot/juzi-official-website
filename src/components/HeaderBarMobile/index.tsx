@@ -33,13 +33,13 @@ const HeaderBarMobile: NextPage = () => {
         'px-4 flex justify-between items-center bg-[#fff]'
       )}
     >
-      <div className='h-[64px] flex items-center'>
+      <div className='h-[64px] mt-[3px] mb-[-4px] flex items-center'>
       <a className="logo" href={`${host}/${i18n.language}`}>
         <Image
           alt='logo'
-          src='https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/e454f977-c304-49cd-a9a4-989a49237a54/%E5%AE%98%E7%BD%91logo%201%20(1).png'
+          src={ isZh ? "/_images/image-page/logo-black.svg" : "/_images/image-page/logo-black-en.svg"}
           width={106}
-          height={30}
+          height={56}
           draggable='false'
         />
       </a>
