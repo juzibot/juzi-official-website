@@ -111,7 +111,7 @@ const Footer: NextPage = () => {
             <div className="menu-container !flex justify-evenly">
               <div className="logo">
                 <Image
-                  src="https://cdn-official-website.juzibot.com/images/logo.svg"
+                  src={ isZh ? "/_images/image-page/logo-black.svg" : "/_images/image-page/logo-black-en.svg"}
                   width={120}
                   height={64}
                   draggable="false"

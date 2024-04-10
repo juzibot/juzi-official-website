@@ -867,7 +867,8 @@ const GrowthWall: NextPage = () => {
 };
 
 const AboutUsHeroPage: NextPage = () => {
-  const { t } = useTranslation('about-us');
+  const { t,i18n } = useTranslation('about-us');
+  const isZh = i18n.language === 'zh';
   return (
     <div className='first-page'>
       <Seo page='about-us' />
@@ -884,7 +885,7 @@ const AboutUsHeroPage: NextPage = () => {
           />
           <div className='logo-box'>
             <img
-              src='https://cdn-official-website.juzibot.com/images/logo.png'
+              src={ isZh ? "/_images/image-page/logo-black.svg" : "/_images/image-page/logo-black-en.svg"}
               alt='logo'
               draggable='false'
             />

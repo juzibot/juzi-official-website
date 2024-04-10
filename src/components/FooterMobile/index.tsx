@@ -181,7 +181,7 @@ const FooterMobile: NextPage = () => {
       <footer className={cx(i18n.language, styles.footer, 'pb-24 bg-[#F9F9F9]')}>
         <div className="pl-2 pt-5 hidden">
           <Image
-            src="https://cdn-official-website.juzibot.com/images/logo.svg"
+            src={ isZh ? "/_images/image-page/logo-black.svg" : "/_images/image-page/logo-black-en.svg"}
             width={120}
             height={64}
             draggable="false"

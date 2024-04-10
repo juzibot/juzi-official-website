@@ -487,10 +487,12 @@ const HeaderBar: NextPage = () => {
 
         { windowWidth > windowWidthMedium ? (
           <menu className="header-left">
-            <a className="logo" href={`${host}/${i18n.language}`}>
+            <a className="logo" href={`${host}/${i18n.language}`} style={{marginTop: isZh ? 0 : 3 }}>
               <Image
                 alt="logo"
-                src={ isMainPageDefault ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
+                src={ isZh ? isMainPageDefault ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"
+                    : isMainPageDefault ? "/_images/image-page/logo-en.svg" : "/_images/image-page/logo-black-en.svg"
+                }
                 width={100}
                 height={64}
                 draggable="false"
@@ -536,10 +538,12 @@ const HeaderBar: NextPage = () => {
           </menu>
         ) :
           <menu className="header-left">
-            <a className="logo" href={`${host}/${i18n.language}`}>
+            <a className="logo" href={`${host}/${i18n.language}`} style={{marginTop: isZh ? 0 : 3 }}>
               <Image
                 alt="logo"
-                src={ isMainPageDefault ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"}
+                src={ isZh ? isMainPageDefault ? "/_images/image-page/logo.svg" : "/_images/image-page/logo-black.svg"
+                    : isMainPageDefault ? "/_images/image-page/logo-en.svg" : "/_images/image-page/logo-black-en.svg"
+                }
                 width={100}
                 height={64}
                 draggable="false"
