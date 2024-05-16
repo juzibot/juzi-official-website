@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import scrollbar from 'tailwind-scrollbar';
+
 module.exports = {
   corePlugins: {
     preflight: false,
@@ -35,4 +37,8 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    scrollbar,
+    // require('tailwind-scrollbar'),
+],
 }

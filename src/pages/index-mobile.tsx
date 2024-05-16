@@ -9,6 +9,7 @@ import Typewriter from 'typewriter-effect';
 import { RightArrow } from '@src/components/Icon';
 import { ContactUsModalWithButton } from '@src/components/ContactUsModal';
 import { useTranslation } from 'react-i18next';
+import { LlmLogos } from "@src/components/LlmLogos";
 
 const MobileIndexPage: NextPage<{}> = () => {
   const { t, i18n } = useTranslation('common');
@@ -83,7 +84,11 @@ const MobileIndexPage: NextPage<{}> = () => {
       { isZh ? (
         <>
           <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-1-m.png" />
-          <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-2-m.png" />
+          <div className='relative'>
+            <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-2-m.png" />
+            <LlmLogos className="absolute bottom-[6.3%] h-[calc(63.5%)] w-[81.2%] right-[7%]" />
+          </div>
+          <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-3-m.png" />
         </>
       ): 
         <img alt="" className='w-full' src="/_images/image-page/index-content-m-en.png" />
