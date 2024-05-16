@@ -18,29 +18,13 @@ const CustomerAcquisitionPage: NextPage = () => {
     toggleChrome(isBrowserChrome());
   }, []);
 
-  // if (isSmallDevice) {
-  //   return (
-  //     <div className='m-auto'>
-  //       <Seo page="features-ai" />
-  //       <img className='w-full' alt='' src='/_images/image-page/ai-20231023-m.png' />
-  //       <div className="wrapper appeal-bar">
-  //         <div className="container !w-[100%]">
-  //           <FooterBarWithButton
-  //             contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}
-  //           />
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
-
   if (isSmallDevice) {
     return (
       <div className='m-auto'>
         <Seo page="features-ai" />
         <div className="relative">
         { isZh ? (
-          <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-m.png"/>
+          <img className='w-full' alt='' src="/_images/image-page/ai-top-20240516-m.png"/>
         ) : 
           <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-m-en.png"/>
         }
@@ -104,7 +88,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       <Seo page="features-ai" />
       <div className="relative">
       {isZh ? (
-        <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206.png"/>
+        <img className='w-full' alt='' src="/_images/image-page/ai-top-20240516.png"/>
       ): 
         <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-en.png"/>
       }
@@ -160,21 +144,6 @@ const CustomerAcquisitionPage: NextPage = () => {
       </div>
     </div>
   )
-
-  // 旧的
-  return (
-    <div className='m-auto'>
-      <Seo page="features-ai" />
-      <img className='w-full mt-[72px]' alt='' src='/_images/image-page/ai-20231023.png' />
-      <div className="wrapper appeal-bar">
-        <div className="container">
-          <FooterBarWithButton
-            contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}
-          />
-        </div>
-      </div>
-    </div>
-  );
 };
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

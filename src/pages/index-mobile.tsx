@@ -81,7 +81,10 @@ const MobileIndexPage: NextPage<{}> = () => {
       </div>
 
       { isZh ? (
-        <img alt="" className='w-full' src="/_images/image-page/index-content-m.png" />
+        <>
+          <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-1-m.png" />
+          <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-2-m.png" />
+        </>
       ): 
         <img alt="" className='w-full' src="/_images/image-page/index-content-m-en.png" />
       }
@@ -97,24 +100,6 @@ const MobileIndexPage: NextPage<{}> = () => {
       />
     </div>
   )
-  return (
-    <div className="text-jz-text-3 relative">
-      <Seo page="homepage" />
-      <div className="absolute top-[221px] flex items-center justify-center w-[100%]">
-        <a onClick={() => setShowContactUs(true)} target="_blank" className="w-[150px] h-[50px]" style={{ border: 'unset' }}></a>
-      </div>
-      <img alt="" className='w-full' src="/_images/image-page/index-20231207-m.png" />
-      <div className="wrapper appeal-bar !px-[16px]">
-        <div className="container !w-[100%]">
-          <FooterBarWithButton />
-        </div>
-      </div>
-      <ContactUsModal
-        open={showContactUs}
-        onCancel={() => setShowContactUs(false)}
-      />
-    </div>
-  );
 };
 
 export default MobileIndexPage;

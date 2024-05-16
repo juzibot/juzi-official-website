@@ -39,7 +39,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         <Seo page="features-rpa" />
         <div className="relative">
         { isZh ? (
-          <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206-m.png"/>
+          <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240516-m.png"/>
         ) : 
           <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206-m-en.png"/>
         }
@@ -103,7 +103,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       <Seo page="features-rpa" />
       <div className="relative">
       { isZh ? (
-        <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206.png"/>
+        <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240516.png"/>
       ):
         <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206-en.png"/>
       }
