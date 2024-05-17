@@ -5,6 +5,7 @@ import { useMediaQuery } from "@react-hookz/web";
 
 type Props = {
   className?: string,
+  isImageLoaded?: boolean,
 }
 
 const filePaths = [
@@ -59,7 +60,7 @@ const getMaxShowCount = (boxHeight: number, unitHeight: number, heightChange: nu
   return endIndex;
 }
 
-export const LlmLogos: FC<Props> = ({ className }) => {
+export const LlmLogos: FC<Props> = ({ className, isImageLoaded }) => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [showList, setShowList] = useState<string[]>([]);
   const [initShowCount, setInitShowCount] = useState<number>();
@@ -89,7 +90,9 @@ export const LlmLogos: FC<Props> = ({ className }) => {
 
           let scrollListH = unitHeight * filePaths.length + unitGap * (filePaths.length - 1);
           scrollListH = scrollListH + (unit - ((scrollListH - height) % unit));
-          if (height > unitHeight && initShowCount === undefined) {
+
+          const isLoaded = isSmallDevice ? isImageLoaded : true;
+          if (isLoaded && height > unitHeight && initShowCount === undefined) {
             setInitShowCount(getMaxShowCount(height, unitHeight, heightChange, unitGap));
           }
           return (
