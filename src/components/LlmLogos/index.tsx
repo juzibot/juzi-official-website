@@ -87,7 +87,8 @@ export const LlmLogos: FC<Props> = ({ className }) => {
           const showCount = Math.floor(height / unit);
           const middleIndex = getMiddleIndex(showCount);
 
-          const scrollListH = unitHeight * filePaths.length + unitGap * (filePaths.length - 1);
+          let scrollListH = unitHeight * filePaths.length + unitGap * (filePaths.length - 1);
+          scrollListH = scrollListH + (unit - ((scrollListH - height) % unit));
           if (height > unitHeight && initShowCount === undefined) {
             setInitShowCount(getMaxShowCount(height, unitHeight, heightChange, unitGap));
           }
@@ -95,15 +96,15 @@ export const LlmLogos: FC<Props> = ({ className }) => {
             <div style={{ height, width }}>
 
               {/* 图层1 border-red-500 border-dotted  */}
-              <div className="h-full w-full overflow-auto absolute z-20"
+              <div className="h-full w-full overflow-auto scrollbar-none absolute z-20"
                 onScroll={event => {
                   const { scrollTop } = event.currentTarget;
                   const topCount = Math.floor(scrollTop / unit);
                   setShowList(filePaths.slice(topCount, topCount + showCount));
                 }}
               >
-                <div className="image-list flex flex-col invisible">
-                  <div style={{ height: scrollListH }} />
+                <div className="image-list flex flex-col visible">
+                  <div style={{ height: scrollListH }} className="box-content" />
                 </div>
               </div>
 
