@@ -8,6 +8,7 @@ import { useMediaQuery } from '@react-hookz/web';
 import FooterBarWithButton from '@src/components/FooterBarWithButton';
 import Typewriter from 'typewriter-effect';
 import { useTranslation } from 'react-i18next';
+import { LlmIntegration } from '@src/components/LlmIntegration';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const { t, i18n } = useTranslation('common');
@@ -68,9 +69,16 @@ const CustomerAcquisitionPage: NextPage = () => {
           </div>
         </div>
         {isZh ? (
-          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206-m.png' />
+          <>
+            <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-1-m.png' />
+            <LlmIntegration />
+            <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-3-m.png' />
+          </>
         ): 
-        <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206-m-en.png' />
+        <>
+          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206-m-en.png' />
+          <LlmIntegration />
+        </>
         }
         <div className="wrapper appeal-bar">
           <div className="container !w-[100%]">
@@ -132,8 +140,17 @@ const CustomerAcquisitionPage: NextPage = () => {
         </div>
       </div>
       {isZh ? (
-        <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206.png' />
-      ): <img className='w-full' style={{marginTop: -60}} alt='' src='/_images/image-page/ai-middle-20240206-en.png' />
+        <>
+          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-1.jpg' />
+          <LlmIntegration />
+          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-3.jpg' />
+        </>
+      ): (
+        <>
+          <img className='w-full' style={{marginTop: -60}} alt='' src='/_images/image-page/ai-middle-20240206-en.png' />
+          <LlmIntegration />
+        </>
+      )
       }
       <div className="wrapper appeal-bar">
         <div className="container !w-[100%]">

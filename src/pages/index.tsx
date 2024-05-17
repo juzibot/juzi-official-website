@@ -15,6 +15,7 @@ import { RightArrow } from '@src/components/Icon';
 import { ContactUsModalWithButton } from '@src/components/ContactUsModal';
 import LogosWallNew from '../components/index/LogosWallNew';
 import { LlmLogos } from '@src/components/LlmLogos';
+import { LlmIntegration } from '@src/components/LlmIntegration';
 
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -122,14 +123,13 @@ const Home: NextPage = () => {
         {isZh ? (
           <>
             <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-1.png" />
-            <div className='relative'>
-              <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-2.png" />
-              <LlmLogos className="absolute bottom-[8.3%] h-[calc(74.5%)] w-[30%] right-[8.4%]" />
-            </div>
+            <LlmIntegration />
             <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-3.png" />
           </>
         ) :
-        <><img className='w-full' alt='' src="/_images/image-page/index-content-en.png" />
+        <>
+          <img className='w-full' alt='' src="/_images/image-page/index-content-en.png" />
+          <LlmIntegration />
           <LogosWallNew />
         </>
         }

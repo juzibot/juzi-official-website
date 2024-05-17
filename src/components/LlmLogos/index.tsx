@@ -26,7 +26,7 @@ const filePaths = [
   "Sensetime.png",
   "TianGong.png",
   "Google-Bard.png"
-].map(fileName => `_images/icons/llm-logo/${fileName}`);
+].map(fileName => `/_images/icons/llm-logo/${fileName}`);
 
 const getMiddleIndex = (endIndex: number) => parseInt(((endIndex - 1) / 2).toString());
 
@@ -80,7 +80,7 @@ export const LlmLogos: FC<Props> = ({ className }) => {
   }
 
   return (
-    <div className={cls('overflow-auto flex xxxxx', className)}>
+    <div className={cls('overflow-auto flex', className)}>
       <AutoSizer>
         {({ height, width }) => {
           const unit = unitHeight + unitGap;

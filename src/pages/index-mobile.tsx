@@ -10,6 +10,7 @@ import { RightArrow } from '@src/components/Icon';
 import { ContactUsModalWithButton } from '@src/components/ContactUsModal';
 import { useTranslation } from 'react-i18next';
 import { LlmLogos } from "@src/components/LlmLogos";
+import { LlmIntegration } from "@src/components/LlmIntegration";
 
 const MobileIndexPage: NextPage<{}> = () => {
   const { t, i18n } = useTranslation('common');
@@ -84,14 +85,14 @@ const MobileIndexPage: NextPage<{}> = () => {
       { isZh ? (
         <>
           <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-1-m.png" />
-          <div className='relative'>
-            <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-2-m.png" />
-            <LlmLogos className="absolute bottom-[6.3%] h-[calc(63.5%)] w-[81.2%] right-[7%]" />
-          </div>
+          <LlmIntegration />
           <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-3-m.png" />
         </>
       ): 
-        <img alt="" className='w-full' src="/_images/image-page/index-content-m-en.png" />
+        <>
+          <img alt="" className='w-full' src="/_images/image-page/index-content-m-en.png" />
+          <LlmIntegration />
+        </>
       }
 
       <div className="wrapper appeal-bar !px-[16px]">
