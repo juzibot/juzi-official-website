@@ -128,8 +128,9 @@ const Home: NextPage = () => {
           </>
         ) :
         <>
-          <img className='w-full' alt='' src="/_images/image-page/index-content-en.png" />
+          <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-en.png" />
           <LlmIntegration />
+          <img className='w-full' alt='' src="/_images/image-page/index-logos-title-20240516-en.png" />
           <LogosWallNew />
         </>
         }
