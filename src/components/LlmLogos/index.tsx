@@ -83,7 +83,7 @@ export const LlmLogos: FC<Props> = ({ className, isImageLoaded }) => {
   return (
     <div className={cls('overflow-auto flex', className)}>
       <AutoSizer>
-        {({ height, width }) => {
+        {({ height, width }: { height: number, width: number }) => {
           const unit = unitHeight + unitGap;
           const showCount = Math.floor(height / unit);
           const middleIndex = getMiddleIndex(showCount);

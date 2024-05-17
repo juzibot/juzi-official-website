@@ -9,7 +9,6 @@ import Typewriter from 'typewriter-effect';
 import { RightArrow } from '@src/components/Icon';
 import { ContactUsModalWithButton } from '@src/components/ContactUsModal';
 import { useTranslation } from 'react-i18next';
-import { LlmLogos } from "@src/components/LlmLogos";
 import { LlmIntegration } from "@src/components/LlmIntegration";
 
 const MobileIndexPage: NextPage<{}> = () => {
