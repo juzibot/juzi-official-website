@@ -1,11 +1,10 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import cls from 'classnames';
 import AutoSizer from "react-virtualized-auto-sizer";
 import { useMediaQuery } from "@react-hookz/web";
 
 type Props = {
   className?: string,
-  isImageLoaded?: boolean,
 }
 
 const filePaths = [
@@ -60,14 +59,19 @@ const getMaxShowCount = (boxHeight: number, unitHeight: number, heightChange: nu
   return endIndex;
 }
 
-export const LlmLogos: FC<Props> = ({ className, isImageLoaded }) => {
+export const LlmLogos: FC<Props> = ({ className }) => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [showList, setShowList] = useState<string[]>([]);
   const [initShowCount, setInitShowCount] = useState<number>();
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    console.log('生命周期', [initShowCount])
     if (initShowCount) {
       setShowList(filePaths.slice(0, initShowCount));
+      if (scrollRef.current) {
+        scrollRef.current.scrollTop = 0;
+      }
     }
   }, [initShowCount])
 
@@ -85,21 +89,22 @@ export const LlmLogos: FC<Props> = ({ className, isImageLoaded }) => {
       <AutoSizer>
         {({ height, width }: { height: number, width: number }) => {
           const unit = unitHeight + unitGap;
-          const showCount = Math.floor(height / unit);
+          const showCount = getMaxShowCount(height, unitHeight, heightChange, unitGap);
           const middleIndex = getMiddleIndex(showCount);
 
           let scrollListH = unitHeight * filePaths.length + unitGap * (filePaths.length - 1);
           scrollListH = scrollListH + (unit - ((scrollListH - height) % unit));
 
-          const isLoaded = isSmallDevice ? isImageLoaded : true;
-          if (isLoaded && height > unitHeight && initShowCount === undefined) {
+          if (initShowCount !== showCount) {
             setInitShowCount(getMaxShowCount(height, unitHeight, heightChange, unitGap));
           }
           return (
             <div style={{ height, width }}>
 
               {/* 图层1 border-red-500 border-dotted  */}
-              <div className="h-full w-full overflow-auto scrollbar-none absolute z-20"
+              <div
+                ref={scrollRef}
+                className="h-full w-full overflow-auto scrollbar-none absolute z-20"
                 onScroll={event => {
                   const { scrollTop } = event.currentTarget;
                   const topCount = Math.floor(scrollTop / unit);
