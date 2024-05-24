@@ -3,7 +3,7 @@ import Seo from '@src/components/common/Seo';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Image from 'next/image';
-import { CSSProperties, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { SwiperSlide, Swiper } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
@@ -345,527 +345,527 @@ const CustomerDisplay: NextPage = () => {
   );
 };
 
-const Popup: NextPage<{
-  isReverse?: boolean;
-  x: number;
-  y: number;
-  lineY?: number;
-  title: string;
-  style?: CSSProperties;
-  flag: string;
-  currentFlag: string;
-  flagSetter: (f: string) => void;
-}> = ({
-  isReverse,
-  children,
-  title,
-  x,
-  y,
-  style,
-  lineY,
-  flagSetter,
-  flag,
-  currentFlag,
-}) => {
-  if (isReverse) {
-    return (
-      <div
-        className={`popup-container-reverse pop ${
-          flag === currentFlag ? 'hover' : ''
-        }`}
-        style={{ transform: `translate(${x}px, ${y}px)` }}
-        onMouseLeave={() => flagSetter('')}
-        onMouseMove={() => flagSetter(flag)}
-        id={`c${flag}`}
-      >
-        <div
-          className='line'
-          style={lineY ? { transform: `translateY(${lineY}px)` } : {}}
-        ></div>
-        <div className='popup' style={style}>
-          <div>
-            <strong>{title}</strong>
-          </div>
-          {children}
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div
-        className={`popup-container ${currentFlag === flag ? 'hover' : ''}`}
-        style={{ transform: `translate(${x}px, ${y}px)` }}
-        onMouseLeave={() => flagSetter('')}
-        onMouseMove={() => flagSetter(flag)}
-      >
-        <div className='popup' style={style}>
-          <div>
-            <strong>{title}</strong>
-          </div>
-          {children}
-        </div>
-        <div
-          className='line'
-          style={lineY ? { transform: `translateY(${lineY}px)` } : {}}
-        ></div>
-      </div>
-    );
-  }
-};
+// const Popup: NextPage<{
+//   isReverse?: boolean;
+//   x: number;
+//   y: number;
+//   lineY?: number;
+//   title: string;
+//   style?: CSSProperties;
+//   flag: string;
+//   currentFlag: string;
+//   flagSetter: (f: string) => void;
+// }> = ({
+//   isReverse,
+//   children,
+//   title,
+//   x,
+//   y,
+//   style,
+//   lineY,
+//   flagSetter,
+//   flag,
+//   currentFlag,
+// }) => {
+//   if (isReverse) {
+//     return (
+//       <div
+//         className={`popup-container-reverse pop ${
+//           flag === currentFlag ? 'hover' : ''
+//         }`}
+//         style={{ transform: `translate(${x}px, ${y}px)` }}
+//         onMouseLeave={() => flagSetter('')}
+//         onMouseMove={() => flagSetter(flag)}
+//         id={`c${flag}`}
+//       >
+//         <div
+//           className='line'
+//           style={lineY ? { transform: `translateY(${lineY}px)` } : {}}
+//         ></div>
+//         <div className='popup' style={style}>
+//           <div>
+//             <strong>{title}</strong>
+//           </div>
+//           {children}
+//         </div>
+//       </div>
+//     );
+//   } else {
+//     return (
+//       <div
+//         className={`popup-container ${currentFlag === flag ? 'hover' : ''}`}
+//         style={{ transform: `translate(${x}px, ${y}px)` }}
+//         onMouseLeave={() => flagSetter('')}
+//         onMouseMove={() => flagSetter(flag)}
+//       >
+//         <div className='popup' style={style}>
+//           <div>
+//             <strong>{title}</strong>
+//           </div>
+//           {children}
+//         </div>
+//         <div
+//           className='line'
+//           style={lineY ? { transform: `translateY(${lineY}px)` } : {}}
+//         ></div>
+//       </div>
+//     );
+//   }
+// };
 
-const Dot: NextPage<{
-  x: number;
-  y: number;
-  isWhite?: boolean;
-  onClick?: () => void;
-  flag: string;
-  currentFlag: string;
-  flagSetter: (f: string) => void;
-}> = ({ x, y, isWhite, onClick, flag, currentFlag, flagSetter }) => {
-  return (
-    <div
-      className={`dot-container ${currentFlag === flag ? 'hover' : ''}`}
-      style={{
-        transform: `translate(${x}px, ${y}px)`,
-        borderWidth: isWhite ? 10 : 8,
-      }}
-      onMouseMove={() => flagSetter(flag)}
-      onMouseLeave={() => flagSetter('')}
-    >
-      <div className={isWhite ? 'dot-white' : 'dot'} onClick={onClick}></div>
-    </div>
-  );
-};
+// const Dot: NextPage<{
+//   x: number;
+//   y: number;
+//   isWhite?: boolean;
+//   onClick?: () => void;
+//   flag: string;
+//   currentFlag: string;
+//   flagSetter: (f: string) => void;
+// }> = ({ x, y, isWhite, onClick, flag, currentFlag, flagSetter }) => {
+//   return (
+//     <div
+//       className={`dot-container ${currentFlag === flag ? 'hover' : ''}`}
+//       style={{
+//         transform: `translate(${x}px, ${y}px)`,
+//         borderWidth: isWhite ? 10 : 8,
+//       }}
+//       onMouseMove={() => flagSetter(flag)}
+//       onMouseLeave={() => flagSetter('')}
+//     >
+//       <div className={isWhite ? 'dot-white' : 'dot'} onClick={onClick}></div>
+//     </div>
+//   );
+// };
 
-const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
-  const { t } = useTranslation('about-us');
-  const { i18n } = useTranslation('about-us');
-  const isZh = i18n.language === 'zh';
-  if (flag === '2015') {
-    return (
-      <div className='cover-dialog hover c-2015'>
-        <strong>2015.02</strong>
-        <div>
-          {t('2015.02-text')}
-        </div>
-        <strong>2016.05</strong>
-        <div>{t('2016.05-text')}</div>
-        <strong>2016.06</strong>
-        <div>{t('2016.06-text')}</div>
-      </div>
-    );
-  }
-  if (flag === '2017') {
-    return (
-      <div className='cover-dialog reverse hover c-2017'>
-        <strong>2017.03</strong>
-        <div>{t('2017.03-text')}</div>
-        <strong>2017.04</strong>
-        <div>{t('2017.04-text')}</div>
-        <strong>2017.07</strong>
-        <div>{t('2017.07-text')}</div>
-        <strong>2017.12</strong>
-        <div>{t('2017.12-text')}</div>
-      </div>
-    );
-  }
-  if (flag === '2018') {
-    return (
-      <div className='cover-dialog hover c-2018'>
-        <strong>2018.01</strong>
-        <div>
-          {t('2018.01-text')}
-        </div>
-        <strong>2018.03</strong>
-        <div>{t('2018.03-text')}</div>
-        {isZh ? (
-          <>
-          <strong>2018.05</strong><div>
-            {t('2018.05-text')}
-          </div>
-          </>
-        ) : null}
-        <strong>2018.08</strong>
-        <div>
-          {t('2018.08-text')}
-        </div>
-        <strong>2018.09</strong>
-        <div>{t('2018.09-text')}</div>
-        <strong>2018.12</strong>
-        <div>{t('2018.12-text')}</div>
-      </div>
-    );
-  }
-  if (flag === '2019') {
-    return (
-      <div className='cover-dialog reverse hover c-2019'>
-        <strong>2019.01</strong>
-        <div>{t('2019.01-text')}</div>
-        <strong>2019.04</strong>
-        <div>
-          {t('2019.04-text')}
-        </div>
-        <strong>2019.07</strong>
-        <div>{t('2019.07-text')}</div>
-        <strong>2019.10</strong>
-        <div>{t('2019.10-text')}</div>
-        <strong>2019.12</strong>
-        <div>
-          {t('2019.12-text')}
-        </div>
-      </div>
-    );
-  }
-  if (flag === '2020') {
-    return (
-      <div className='cover-dialog hover c-2020'>
-        <strong>2020.03</strong>
-        <div>
-          {t('2020.03-text')}
-        </div>
-        <strong>2020.05</strong>
-        <div>{t('2020.05-text')}</div>
-        {isZh ? (
-          <>
-          <strong>2020.08</strong>
-          <div>{t('2020.08-text')}</div>
-          </>
-        ) : null }
-        <strong>2020.09</strong>
-        <div>
-          {t('2020.09-text')}
-        </div>
-        <strong>2020.11</strong>
-        <div>{t('2020.11-text')}</div>
-        <strong>2020.12</strong>
-        <div>{t('2020.12-text')}</div>
-      </div>
-    );
-  }
-  if (flag === '2021') {
-    return (
-      <div className='cover-dialog reverse hover c-2021'>
-        <strong>2021.01</strong>
-        <div>{t('2021.01-text')}</div>
-        <strong>2021.03</strong>
-        <div>{t('2021.03-text')}</div>
-        <strong>2021.05</strong>
-          <div>
-            {t('2021.05-text')}
-          </div>
-        {isZh ? (
-          <>
-          <strong>2021.07</strong>
-          <div>
-            {t('2021.07-text')}
-          </div>
-          </>
-        ) : null }
-        <strong>2021.08</strong>
-        <div>
-          {t('2021.08-text')}
-        </div>
-        <strong>2021.09</strong>
-        <div>
-          {t('2021.09-text')}
-        </div>
-        <strong>2021.12</strong>
-        <div>{t('2021.12-text')}</div>
-      </div>
-    );
-  }
-  if (flag === '2022') {
-    return (
-      <div className='cover-dialog hover c-2022'>
-        <strong>2022.01</strong>
-        <div>{t('2022.01-text')}</div>
-        <strong>2022.03</strong>
-        <div>{t('2022.03-text')}</div>
-      </div>
-    );
-  }
-  return null;
-};
+// const ExtraDialog: NextPage<{ flag: string }> = ({ flag }) => {
+//   const { t } = useTranslation('about-us');
+//   const { i18n } = useTranslation('about-us');
+//   const isZh = i18n.language === 'zh';
+//   if (flag === '2015') {
+//     return (
+//       <div className='cover-dialog hover c-2015'>
+//         <strong>2015.02</strong>
+//         <div>
+//           {t('2015.02-text')}
+//         </div>
+//         <strong>2016.05</strong>
+//         <div>{t('2016.05-text')}</div>
+//         <strong>2016.06</strong>
+//         <div>{t('2016.06-text')}</div>
+//       </div>
+//     );
+//   }
+//   if (flag === '2017') {
+//     return (
+//       <div className='cover-dialog reverse hover c-2017'>
+//         <strong>2017.03</strong>
+//         <div>{t('2017.03-text')}</div>
+//         <strong>2017.04</strong>
+//         <div>{t('2017.04-text')}</div>
+//         <strong>2017.07</strong>
+//         <div>{t('2017.07-text')}</div>
+//         <strong>2017.12</strong>
+//         <div>{t('2017.12-text')}</div>
+//       </div>
+//     );
+//   }
+//   if (flag === '2018') {
+//     return (
+//       <div className='cover-dialog hover c-2018'>
+//         <strong>2018.01</strong>
+//         <div>
+//           {t('2018.01-text')}
+//         </div>
+//         <strong>2018.03</strong>
+//         <div>{t('2018.03-text')}</div>
+//         {isZh ? (
+//           <>
+//           <strong>2018.05</strong><div>
+//             {t('2018.05-text')}
+//           </div>
+//           </>
+//         ) : null}
+//         <strong>2018.08</strong>
+//         <div>
+//           {t('2018.08-text')}
+//         </div>
+//         <strong>2018.09</strong>
+//         <div>{t('2018.09-text')}</div>
+//         <strong>2018.12</strong>
+//         <div>{t('2018.12-text')}</div>
+//       </div>
+//     );
+//   }
+//   if (flag === '2019') {
+//     return (
+//       <div className='cover-dialog reverse hover c-2019'>
+//         <strong>2019.01</strong>
+//         <div>{t('2019.01-text')}</div>
+//         <strong>2019.04</strong>
+//         <div>
+//           {t('2019.04-text')}
+//         </div>
+//         <strong>2019.07</strong>
+//         <div>{t('2019.07-text')}</div>
+//         <strong>2019.10</strong>
+//         <div>{t('2019.10-text')}</div>
+//         <strong>2019.12</strong>
+//         <div>
+//           {t('2019.12-text')}
+//         </div>
+//       </div>
+//     );
+//   }
+//   if (flag === '2020') {
+//     return (
+//       <div className='cover-dialog hover c-2020'>
+//         <strong>2020.03</strong>
+//         <div>
+//           {t('2020.03-text')}
+//         </div>
+//         <strong>2020.05</strong>
+//         <div>{t('2020.05-text')}</div>
+//         {isZh ? (
+//           <>
+//           <strong>2020.08</strong>
+//           <div>{t('2020.08-text')}</div>
+//           </>
+//         ) : null }
+//         <strong>2020.09</strong>
+//         <div>
+//           {t('2020.09-text')}
+//         </div>
+//         <strong>2020.11</strong>
+//         <div>{t('2020.11-text')}</div>
+//         <strong>2020.12</strong>
+//         <div>{t('2020.12-text')}</div>
+//       </div>
+//     );
+//   }
+//   if (flag === '2021') {
+//     return (
+//       <div className='cover-dialog reverse hover c-2021'>
+//         <strong>2021.01</strong>
+//         <div>{t('2021.01-text')}</div>
+//         <strong>2021.03</strong>
+//         <div>{t('2021.03-text')}</div>
+//         <strong>2021.05</strong>
+//           <div>
+//             {t('2021.05-text')}
+//           </div>
+//         {isZh ? (
+//           <>
+//           <strong>2021.07</strong>
+//           <div>
+//             {t('2021.07-text')}
+//           </div>
+//           </>
+//         ) : null }
+//         <strong>2021.08</strong>
+//         <div>
+//           {t('2021.08-text')}
+//         </div>
+//         <strong>2021.09</strong>
+//         <div>
+//           {t('2021.09-text')}
+//         </div>
+//         <strong>2021.12</strong>
+//         <div>{t('2021.12-text')}</div>
+//       </div>
+//     );
+//   }
+//   if (flag === '2022') {
+//     return (
+//       <div className='cover-dialog hover c-2022'>
+//         <strong>2022.01</strong>
+//         <div>{t('2022.01-text')}</div>
+//         <strong>2022.03</strong>
+//         <div>{t('2022.03-text')}</div>
+//       </div>
+//     );
+//   }
+//   return null;
+// };
 
-const GrowthWall: NextPage = () => {
-  const { t } = useTranslation('about-us');
-  const { i18n } = useTranslation('about-us');
-  const isZh = i18n.language === 'zh';
-  const [flag, setFlag] = useState('');
-  const popupFlags = [
-    '2015',
-    '2016-05',
-    '2017',
-    '2017-12',
-    '2018',
-    '2018-12',
-    '2019',
-    '2019-01',
-    '2020',
-    '2020-03',
-    '2021',
-    '2021-07',
-    '2022',
-    '2022-01',
-  ];
-  const autoPlayRef = useRef<NodeJS.Timer>();
-  const [extraPopopVisible, toggleExtraPopopVisible] = useState(false);
+// const GrowthWall: NextPage = () => {
+//   const { t } = useTranslation('about-us');
+//   const { i18n } = useTranslation('about-us');
+//   const isZh = i18n.language === 'zh';
+//   const [flag, setFlag] = useState('');
+//   const popupFlags = [
+//     '2015',
+//     '2016-05',
+//     '2017',
+//     '2017-12',
+//     '2018',
+//     '2018-12',
+//     '2019',
+//     '2019-01',
+//     '2020',
+//     '2020-03',
+//     '2021',
+//     '2021-07',
+//     '2022',
+//     '2022-01',
+//   ];
+//   const autoPlayRef = useRef<NodeJS.Timer>();
+//   const [extraPopopVisible, toggleExtraPopopVisible] = useState(false);
 
-  useEffect(() => {
-    if (popupFlags?.length) {
-      autoPlayRef.current = setTimeout(() => {
-        if (!flag) return;
-        let idx = popupFlags.indexOf(flag) + 1;
-        if (idx > popupFlags.length - 1) {
-          idx = 0;
-        }
-        setFlag(popupFlags[idx]);
-      }, 5000);
-    }
-  }, [flag]);
+//   useEffect(() => {
+//     if (popupFlags?.length) {
+//       autoPlayRef.current = setTimeout(() => {
+//         if (!flag) return;
+//         let idx = popupFlags.indexOf(flag) + 1;
+//         if (idx > popupFlags.length - 1) {
+//           idx = 0;
+//         }
+//         setFlag(popupFlags[idx]);
+//       }, 5000);
+//     }
+//   }, [flag]);
 
-  useEffect(() => {
-    startAutoPlay();
-  }, []);
+//   useEffect(() => {
+//     startAutoPlay();
+//   }, []);
 
-  function startAutoPlay() {
-    autoPlayRef.current = setTimeout(() => {
-      if (!flag) {
-        setFlag('2016-05');
-      }
-    }, 2000);
-  }
+//   function startAutoPlay() {
+//     autoPlayRef.current = setTimeout(() => {
+//       if (!flag) {
+//         setFlag('2016-05');
+//       }
+//     }, 2000);
+//   }
 
-  return (
-    <>
-      <h3>{t('timeline-title')}</h3>
-      <div
-        className='growth-data'
-        onMouseMove={() => {
-          autoPlayRef.current && clearTimeout(autoPlayRef.current);
-          toggleExtraPopopVisible(true);
-        }}
-        onMouseLeave={() => {
-          toggleExtraPopopVisible(false);
-          startAutoPlay();
-        }}
-      >
-        <ExtraDialog flag={extraPopopVisible ? flag : ''} />
-        <Popup
-          title='2016.05'
-          x={123}
-          y={104}
-          lineY={182}
-          flag='2016-05'
-          flagSetter={setFlag}
-          currentFlag={flag}
-        >
-          <div>{t('2016.05-text')}</div>
-        </Popup>
+//   return (
+//     <>
+//       <h3>{t('timeline-title')}</h3>
+//       <div
+//         className='growth-data'
+//         onMouseMove={() => {
+//           autoPlayRef.current && clearTimeout(autoPlayRef.current);
+//           toggleExtraPopopVisible(true);
+//         }}
+//         onMouseLeave={() => {
+//           toggleExtraPopopVisible(false);
+//           startAutoPlay();
+//         }}
+//       >
+//         <ExtraDialog flag={extraPopopVisible ? flag : ''} />
+//         <Popup
+//           title='2016.05'
+//           x={123}
+//           y={104}
+//           lineY={182}
+//           flag='2016-05'
+//           flagSetter={setFlag}
+//           currentFlag={flag}
+//         >
+//           <div>{t('2016.05-text')}</div>
+//         </Popup>
 
-        <Popup
-          title='2017.12'
-          x={284}
-          y={194}
-          lineY={162}
-          isReverse
-          flag='2017-12'
-          flagSetter={setFlag}
-          currentFlag={flag}
-        >
-          <div>{t('2017.12-text')}</div>
-        </Popup>
+//         <Popup
+//           title='2017.12'
+//           x={284}
+//           y={194}
+//           lineY={162}
+//           isReverse
+//           flag='2017-12'
+//           flagSetter={setFlag}
+//           currentFlag={flag}
+//         >
+//           <div>{t('2017.12-text')}</div>
+//         </Popup>
 
-        <Popup
-          title='2018.12'
-          x={480}
-          y={93}
-          lineY={182}
-          style={{ width: 260 }}
-          flag='2018-12'
-          flagSetter={setFlag}
-          currentFlag={flag}
-        >
-          <div>{t('2018.12-text')}</div>
-        </Popup>
+//         <Popup
+//           title='2018.12'
+//           x={480}
+//           y={93}
+//           lineY={182}
+//           style={{ width: 260 }}
+//           flag='2018-12'
+//           flagSetter={setFlag}
+//           currentFlag={flag}
+//         >
+//           <div>{t('2018.12-text')}</div>
+//         </Popup>
 
-        <Popup
-          title='2019.01'
-          isReverse
-          x={624}
-          y={168}
-          lineY={160}
-          style={{ width: 128 }}
-          flag='2019-01'
-          flagSetter={setFlag}
-          currentFlag={flag}
-        >
-          <div>{t('2019.01-text')}</div>
-        </Popup>
+//         <Popup
+//           title='2019.01'
+//           isReverse
+//           x={624}
+//           y={168}
+//           lineY={160}
+//           style={{ width: 128 }}
+//           flag='2019-01'
+//           flagSetter={setFlag}
+//           currentFlag={flag}
+//         >
+//           <div>{t('2019.01-text')}</div>
+//         </Popup>
 
-        <Popup
-          title='2020.03'
-          x={792}
-          y={-100}
-          lineY={315}
-          style={{ width: 280 }}
-          flag='2020-03'
-          flagSetter={setFlag}
-          currentFlag={flag}
-        >
-          <div>{t('2020.03-text')}</div>
-          {isZh ? (
-          <>
-          <div style={{ marginTop: 8 }}>
-            <strong>2020.11</strong>
-          </div>
-          <div>{t('2020.11-text')}</div>
-          </>
-          ): null }
-        </Popup>
+//         <Popup
+//           title='2020.03'
+//           x={792}
+//           y={-100}
+//           lineY={315}
+//           style={{ width: 280 }}
+//           flag='2020-03'
+//           flagSetter={setFlag}
+//           currentFlag={flag}
+//         >
+//           <div>{t('2020.03-text')}</div>
+//           {isZh ? (
+//           <>
+//           <div style={{ marginTop: 8 }}>
+//             <strong>2020.11</strong>
+//           </div>
+//           <div>{t('2020.11-text')}</div>
+//           </>
+//           ): null }
+//         </Popup>
 
-        <Popup
-          title='2021.07'
-          x={1000}
-          y={70}
-          lineY={159}
-          style={{ width: 310 }}
-          isReverse
-          flag='2021-07'
-          flagSetter={setFlag}
-          currentFlag={flag}
-        >
-          <div>
-          {t('2021.07-text')}
-          </div>
-          <div style={{ marginTop: 8 }}>
-            <strong>2021.12</strong>
-          </div>
-          <div>{t('2021.12-text')}</div>
-        </Popup>
+//         <Popup
+//           title='2021.07'
+//           x={1000}
+//           y={70}
+//           lineY={159}
+//           style={{ width: 310 }}
+//           isReverse
+//           flag='2021-07'
+//           flagSetter={setFlag}
+//           currentFlag={flag}
+//         >
+//           <div>
+//           {t('2021.07-text')}
+//           </div>
+//           <div style={{ marginTop: 8 }}>
+//             <strong>2021.12</strong>
+//           </div>
+//           <div>{t('2021.12-text')}</div>
+//         </Popup>
 
-        <Popup
-          title='2022.01'
-          x={1093}
-          y={-40}
-          lineY={140}
-          style={{ width: 230 }}
-          flag='2022-01'
-          flagSetter={setFlag}
-          currentFlag={flag}
-        >
-          <div>{t('2022.01-text')}</div>
-        </Popup>
+//         <Popup
+//           title='2022.01'
+//           x={1093}
+//           y={-40}
+//           lineY={140}
+//           style={{ width: 230 }}
+//           flag='2022-01'
+//           flagSetter={setFlag}
+//           currentFlag={flag}
+//         >
+//           <div>{t('2022.01-text')}</div>
+//         </Popup>
 
-        <Dot
-          x={15}
-          y={338}
-          currentFlag={extraPopopVisible ? flag : ''}
-          flagSetter={setFlag}
-          flag='2015'
-        />
-        <Dot
-          x={109}
-          y={338}
-          isWhite
-          currentFlag={flag}
-          flagSetter={setFlag}
-          flag='2016-05'
-        />
-        <Dot
-          x={187}
-          y={335}
-          currentFlag={extraPopopVisible ? flag : ''}
-          flagSetter={setFlag}
-          flag='2017'
-        />
-        <Dot
-          x={270}
-          y={334}
-          isWhite
-          currentFlag={flag}
-          flagSetter={setFlag}
-          flag='2017-12'
-        />
-        <Dot
-          x={357}
-          y={330}
-          currentFlag={extraPopopVisible ? flag : ''}
-          flagSetter={setFlag}
-          flag='2018'
-        />
-        <Dot
-          x={466}
-          y={323}
-          isWhite
-          currentFlag={flag}
-          flagSetter={setFlag}
-          flag='2018-12'
-        />
-        <Dot
-          x={527}
-          y={315}
-          currentFlag={extraPopopVisible ? flag : ''}
-          flagSetter={setFlag}
-          flag='2019'
-        />
-        <Dot
-          x={610}
-          y={305}
-          isWhite
-          currentFlag={flag}
-          flagSetter={setFlag}
-          flag='2019-01'
-        />
-        <Dot
-          x={697}
-          y={286}
-          currentFlag={extraPopopVisible ? flag : ''}
-          flagSetter={setFlag}
-          flag='2020'
-        />
-        <Dot
-          x={779}
-          y={266}
-          isWhite
-          currentFlag={flag}
-          flagSetter={setFlag}
-          flag='2020-03'
-        />
-        <Dot
-          x={867}
-          y={237}
-          currentFlag={extraPopopVisible ? flag : ''}
-          flagSetter={setFlag}
-          flag='2021'
-        />
-        <Dot
-          x={986}
-          y={192}
-          isWhite
-          currentFlag={flag}
-          flagSetter={setFlag}
-          flag='2021-07'
-        />
-        <Dot
-          x={1038}
-          y={169}
-          currentFlag={extraPopopVisible ? flag : ''}
-          flagSetter={setFlag}
-          flag='2022'
-        />
-        <Dot
-          x={1080}
-          y={152}
-          isWhite
-          currentFlag={flag}
-          flagSetter={setFlag}
-          flag='2022-01'
-        />
-      </div>
-    </>
-  );
-};
+//         <Dot
+//           x={15}
+//           y={338}
+//           currentFlag={extraPopopVisible ? flag : ''}
+//           flagSetter={setFlag}
+//           flag='2015'
+//         />
+//         <Dot
+//           x={109}
+//           y={338}
+//           isWhite
+//           currentFlag={flag}
+//           flagSetter={setFlag}
+//           flag='2016-05'
+//         />
+//         <Dot
+//           x={187}
+//           y={335}
+//           currentFlag={extraPopopVisible ? flag : ''}
+//           flagSetter={setFlag}
+//           flag='2017'
+//         />
+//         <Dot
+//           x={270}
+//           y={334}
+//           isWhite
+//           currentFlag={flag}
+//           flagSetter={setFlag}
+//           flag='2017-12'
+//         />
+//         <Dot
+//           x={357}
+//           y={330}
+//           currentFlag={extraPopopVisible ? flag : ''}
+//           flagSetter={setFlag}
+//           flag='2018'
+//         />
+//         <Dot
+//           x={466}
+//           y={323}
+//           isWhite
+//           currentFlag={flag}
+//           flagSetter={setFlag}
+//           flag='2018-12'
+//         />
+//         <Dot
+//           x={527}
+//           y={315}
+//           currentFlag={extraPopopVisible ? flag : ''}
+//           flagSetter={setFlag}
+//           flag='2019'
+//         />
+//         <Dot
+//           x={610}
+//           y={305}
+//           isWhite
+//           currentFlag={flag}
+//           flagSetter={setFlag}
+//           flag='2019-01'
+//         />
+//         <Dot
+//           x={697}
+//           y={286}
+//           currentFlag={extraPopopVisible ? flag : ''}
+//           flagSetter={setFlag}
+//           flag='2020'
+//         />
+//         <Dot
+//           x={779}
+//           y={266}
+//           isWhite
+//           currentFlag={flag}
+//           flagSetter={setFlag}
+//           flag='2020-03'
+//         />
+//         <Dot
+//           x={867}
+//           y={237}
+//           currentFlag={extraPopopVisible ? flag : ''}
+//           flagSetter={setFlag}
+//           flag='2021'
+//         />
+//         <Dot
+//           x={986}
+//           y={192}
+//           isWhite
+//           currentFlag={flag}
+//           flagSetter={setFlag}
+//           flag='2021-07'
+//         />
+//         <Dot
+//           x={1038}
+//           y={169}
+//           currentFlag={extraPopopVisible ? flag : ''}
+//           flagSetter={setFlag}
+//           flag='2022'
+//         />
+//         <Dot
+//           x={1080}
+//           y={152}
+//           isWhite
+//           currentFlag={flag}
+//           flagSetter={setFlag}
+//           flag='2022-01'
+//         />
+//       </div>
+//     </>
+//   );
+// };
 
 const AboutUsHeroPage: NextPage = () => {
   const { t,i18n } = useTranslation('about-us');
