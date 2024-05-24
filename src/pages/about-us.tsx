@@ -997,11 +997,11 @@ const AboutUsPage: NextPage = () => {
         </div>
       </div>
       <div className='horizontal-line'></div>
-      <div className='wrapper growth-wall'>
-            <div className='container' style={{minWidth:1200}}>
-              <GrowthWall />
-            </div>
-          </div>
+      {/* <div className='wrapper growth-wall'>
+        <div className='container' style={{minWidth:1200}}>
+          <GrowthWall />
+        </div>
+      </div> */}
       {isZh ? (
         <>
           <div className='wrapper video-box'>
