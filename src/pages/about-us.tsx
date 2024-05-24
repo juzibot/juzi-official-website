@@ -894,11 +894,19 @@ const AboutUsHeroPage: NextPage = () => {
         </div>
 
         <div className='right'>
-          <div>{t('content-1')}</div>
-          <div
-            style={{ marginTop: 24 }}
-            dangerouslySetInnerHTML={{ __html: t('content-2') }}
-          ></div>
+          {
+            isZh
+              ? <div>{t('content-1')}</div>
+              : (
+                <>
+                  <div>{t('content-1')}</div>
+                  <div
+                    style={{ marginTop: 24 }}
+                    dangerouslySetInnerHTML={{ __html: t('content-2') }}
+                  ></div>
+                </>
+              )
+          }
         </div>
       </div>
     </div>
