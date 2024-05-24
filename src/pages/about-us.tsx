@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Seo from '@src/components/common/Seo';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -918,15 +919,21 @@ const AboutAiNativePage: NextPage = () => {
         </div>
       </div>
 
-      <div className='info-box justify-center'>
+      <div className='info-box justify-center relative'>
         <div className='flex-1 flex items-center justify-center'>
         {isZh ? (
-          <img
-            src='_images/image-page/about-us-1.png'
-            alt='photo'
-            className='w-[1220px]'
-            draggable='false'
-          />
+          <>
+            <img
+              src='_images/image-page/about-us-0524-1.png'
+              alt='photo'
+              className='w-[1220px]'
+              draggable='false'
+            />
+            <a
+              className="w-[14.1%] h-[6.4%] absolute top-[89%] left-[43.8%]"
+              href='/chatbot/practice-guide'
+            />
+          </>
         ) : 
         <img
             src='_images/image-page/about-us-1-en.png'
