@@ -42,9 +42,9 @@ const PracticeGuidePage: NextPage = () => {
       <div className='m-auto'>
         <Seo page="features-ai" />
         <div className="relative">
-          <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-1-en.png" />
-          <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-2-en.png" />
-          <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-3-en.png" />
+          <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-1-m.png" />
+          <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-2-m.png" />
+          <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-3-m.png" />
 
           <div className="absolute w-full top-[5.10%] flex justify-center">
             <div className="bg-white flex items-center rounded-full border border-solid border-[#C8D4E0]">

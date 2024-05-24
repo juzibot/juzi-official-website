@@ -918,7 +918,7 @@ const AboutAiNativePage: NextPage = () => {
   const isZh = i18n.language === 'zh';
   const { t } = useTranslation('about-us');
   return (
-    <div className='first-page !pt-0'>
+    <div className='first-page !pt-0 2xl:!pt-20'>
       <Seo page='about-us' />
       <div className='flex flex-col items-center justify-center'>
         <div className='!text-[32px] font-semibold'>{t('section-2-title')}</div>
