@@ -16,10 +16,12 @@ import { ContactUsModalWithButton } from '@src/components/ContactUsModal';
 import LogosWallNew from '../components/index/LogosWallNew';
 import { LlmLogos } from '@src/components/LlmLogos';
 import { LlmIntegration } from '@src/components/LlmIntegration';
+import cls from 'classnames';
 
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const [, setWidth] = useState(0);
+  const [safeCardIndex, setSafeCardIndex] = useState(0);
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () =>
@@ -122,9 +124,23 @@ const Home: NextPage = () => {
       <div>
         {isZh ? (
           <>
-            <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-1.png" />
+            <img className='w-full' alt='' src="/_images/image-page/index-content-20240620-1.png" />
             <LlmIntegration />
-            <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-3.png" />
+            <img className='w-full' alt='' src="/_images/image-page/index-content-20240620-3.png" />
+            <div className="relative">
+              {/* <img className='w-full' alt='' src="/_images/image-page/index-content-safe-0620.png" /> */}
+              <img className='w-full' alt='' src="/_images/image-page/index-content-safe-blank-0620.png" />
+              <div className="w-[83.29%] h-[63.1%] absolute left-[8.325%] bottom-[12.06%]">
+                <img className={(cls('w-full h-full', safeCardIndex === 0 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card1-0620.png" />
+                <img className={(cls('w-full h-full', safeCardIndex === 1 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card2-0620.png" />
+                <img className={(cls('w-full h-full', safeCardIndex === 2 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card3-0620.png" />
+                <img className={(cls('w-full h-full', safeCardIndex === 3 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card4-0620.png" />
+                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[18%] cursor-pointer" onClick={() => setSafeCardIndex(0)} />
+                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+18%)] cursor-pointer" onClick={() => setSafeCardIndex(1)}  />
+                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+36%)] cursor-pointer" onClick={() => setSafeCardIndex(2)}  />
+                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+54%)] cursor-pointer" onClick={() => setSafeCardIndex(3)}  />
+              </div>
+            </div>
           </>
         ) :
         <>

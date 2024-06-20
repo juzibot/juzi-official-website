@@ -18,42 +18,42 @@ const MobileIndexPage: NextPage<{}> = () => {
   return (
     <div className="relative">
       <Seo page="homepage" />
-      <div className='index-mobile'>
+      <div className='index-mobile relative'>
         <img className='w-full' src="/_images/image-page/index-top-bg-m.png" alt='' />
-        <div className="absolute top-[2.9%] w-full font-sans">
-            {isZh ? (
-              <>
+        <div className="absolute top-[12.0%] w-full font-sans">
+          {isZh ? (
+            <>
               <div className="container">
                 <div className="text-center text-[6vw] text-white ml-[1vw] mr-[1vw]">{t('title')}</div>
                 <div className="flex text-[5vw] font-medium">
-                <span className="w-1/2 flex-shrink-0 text-white text-right mr-[1vw]">{t('subtitle')}</span><Typewriter
+                  <span className="w-1/2 flex-shrink-0 text-white text-right mr-[1vw]">{t('subtitle')}</span><Typewriter
+                    options={{
+                      wrapperClassName: 'text-[5vw] text-[#DA37E8]',
+                      cursorClassName: 'text-[#DA37E8]',
+                      strings: ["数字销售", "数字 SDR", "数字网格员", "数字民警", "数字电力管家"],
+                      autoStart: true,
+                      loop: true,
+                    }} />
+                </div>
+              </div>
+            </>
+          ) :
+            <>
+              <div className="text-center text-[5vw] text-white mt-[calc(2vw)] ml-[1vw] mr-[1vw]">{t('title')}</div>
+              <div className="flex text-[4vw] font-medium">
+                <span className="w-[40%] flex-shrink-0 text-white text-right mr-[1vw]">{t('subtitle')}</span><Typewriter
                   options={{
-                    wrapperClassName: 'text-[5vw] text-[#DA37E8]',
+                    wrapperClassName: 'text-[4vw] text-[#DA37E8]',
                     cursorClassName: 'text-[#DA37E8]',
-                    strings: ["数字销售", "数字 SDR", "数字网格员", "数字民警", "数字电力管家"],
+                    strings: ["Sales Promotion", "Data Analysis", "Client Management", "Issue Resolution", "Support Center"],
                     autoStart: true,
+                    delay: 80,
+                    deleteSpeed: 0.8,
                     loop: true,
                   }} />
-                  </div>
-                </div>
-                </>
-                ) : 
-                <>
-                <div className="text-center text-[5vw] text-white mt-[calc(2vw)] ml-[1vw] mr-[1vw]">{t('title')}</div>
-                <div className="flex text-[4vw] font-medium">
-                <span className="w-[40%] flex-shrink-0 text-white text-right mr-[1vw]">{t('subtitle')}</span><Typewriter
-                options={{
-                  wrapperClassName: 'text-[4vw] text-[#DA37E8]',
-                  cursorClassName: 'text-[#DA37E8]',
-                  strings: ["Sales Promotion", "Data Analysis", "Client Management", "Issue Resolution", "Support Center"],
-                  autoStart: true,
-                  delay: 80,
-                  deleteSpeed: 0.8,
-                  loop: true,
-                }} />
-                </div>
-                </>
-            }
+              </div>
+            </>
+          }
           <div className='w-full mt-[8vw] flex justify-center'>
             <a
               style={{ background: 'linear-gradient(96deg, #EF3BFB 0.67%, #6721FF 98.48%)' }}
@@ -83,9 +83,9 @@ const MobileIndexPage: NextPage<{}> = () => {
 
       { isZh ? (
         <>
-          <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-1-m.png" />
+          <img className='w-full' alt='' src="/_images/image-page/index-content-20240620-1-m.png" />
           <LlmIntegration />
-          <img className='w-full' alt='' src="/_images/image-page/index-content-20240516-3-m.png" />
+          <img className='w-full' alt='' src="/_images/image-page/index-content-20240620-3-m.png" />
         </>
       ): 
         <>

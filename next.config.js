@@ -30,6 +30,11 @@ module.exports = {
         destination: '/en/start',
         permanent: true,
       },
+      {
+        source: '/start',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
 };
