@@ -85,7 +85,7 @@ export const LlmLogos: FC<Props> = ({ className }) => {
   }
 
   return (
-    <div className={cls('overflow-auto flex', className)}>
+    <div className={cls('overflow-auto flex scrollbar-none', className)}>
       <AutoSizer>
         {({ height, width }: { height: number, width: number }) => {
           const unit = unitHeight + unitGap;
