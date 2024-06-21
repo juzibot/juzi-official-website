@@ -39,6 +39,14 @@ const Home: NextPage = () => {
     return <MobileIndexPage />;
   }
 
+  const handleClickTab = (index: number, top: string) => {
+    setSafeCardIndex(index);
+    const slider = document.querySelector<HTMLElement>('#index-content-safe-slider') as HTMLElement;
+    if (slider && top) {
+      slider.style.top = top;
+    }
+  }
+
   return (
     <div className={i18n.language}>
       <Seo page="homepage" />
@@ -135,10 +143,13 @@ const Home: NextPage = () => {
                 <img className={(cls('w-full h-full', safeCardIndex === 1 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card2-0620.png" />
                 <img className={(cls('w-full h-full', safeCardIndex === 2 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card3-0620.png" />
                 <img className={(cls('w-full h-full', safeCardIndex === 3 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card4-0620.png" />
-                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[18%] cursor-pointer" onClick={() => setSafeCardIndex(0)} />
-                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+18%)] cursor-pointer" onClick={() => setSafeCardIndex(1)}  />
-                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+36%)] cursor-pointer" onClick={() => setSafeCardIndex(2)}  />
-                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+54%)] cursor-pointer" onClick={() => setSafeCardIndex(3)}  />
+                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[18%] cursor-pointer" onClick={() => handleClickTab(0, '0')} />
+                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+18%)] cursor-pointer" onClick={() => handleClickTab(1, 'calc((15% + (100% - 15% * 4)/3) * 1)')}  />
+                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+36%)] cursor-pointer" onClick={() => handleClickTab(2, 'calc((15% + (100% - 15% * 4)/3) * 2)')}  />
+                <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+54%)] cursor-pointer" onClick={() => handleClickTab(3, 'calc((15% + (100% - 15% * 4)/3) * 3)')} />
+                <div className="absolute w-[0.8%] h-[63.3%] left-[3.4%] top-[calc(18.26%)] -ml-[1.5px] border-0 border-l-[1.5px] border-[#AAB9CA] border-solid bg-[#EDF6FF]">
+                  <div className="absolute w-[50%] h-[15%] left-0 top-0 -ml-[1.5px] bg-[#1F6DFF] transition-[top] duration-300" id="index-content-safe-slider" />
+                </div>
               </div>
             </div>
           </>
