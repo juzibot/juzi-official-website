@@ -322,7 +322,7 @@ const CustomerDisplay: NextPage = () => {
       <h1>我们的客户</h1>
       <div className='subtitle'>以下为部分客户，排名不分前后</div>
 
-      <img alt='' className="mt-10" src="/_images/image-page/customer-display-20240620.png" />
+      <img alt='' className="mt-10" src="/_images/image-page/customer-display-20240715.png" />
       {/* <div className='category'>消费品牌</div>
       <img
         src='https://cdn-official-website.juzibot.com/images/about-us/consumer-20220222.png'
@@ -886,9 +886,10 @@ const AboutUsHeroPage: NextPage = () => {
           />
           <div className='logo-box'>
             <img
-              src={ isZh ? "/_images/image-page/logo-black.svg" : "/_images/image-page/logo-black-en.svg"}
+              src={ isZh ? "/_images/image-page/logo-vertical.svg" : "/_images/image-page/logo-vertical-en.svg"}
               alt='logo'
               draggable='false'
+              className="!w-[80px]"
             />
           </div>
         </div>

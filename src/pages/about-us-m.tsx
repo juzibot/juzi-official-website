@@ -10,14 +10,14 @@ const ContactUsM: NextPage = () => {
     <div className='m-auto relative'>
       {isZh ? (
         <>
-          <img className='w-full' alt='' src='/_images/image-page/about-us-20240620-m.png' />
+          <img className='w-full' alt='' src='/_images/image-page/about-us-20240715-m.png' />
           <a
             className="w-[44%] h-[1.3%] absolute top-[62.53%] left-[27.8%]"
             href='/chatbot/practice-guide'
           />
         </>
         ): 
-          <img className='w-full' alt='' src='/_images/image-page/about-us-20220207-m-en.png' />
+          <img className='w-full' alt='' src='/_images/image-page/about-us-20240715-m-en.png' />
         }
     </div>
   );
