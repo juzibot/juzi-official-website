@@ -17,7 +17,7 @@ export const AboutUsAppealBar: NextPage = () => {
   const { i18n } = useTranslation('about-us');
   return (
     <>
-      <h2>{i18n.language === 'en' ? 'Join Juzi.bot and work together with numerous top brands' :'加入句子互动，与众多头部品牌一起打造中国私域新生态'}</h2>
+      <h2>{i18n.language === 'en' ? 'Join Juzi.bot and work together with numerous top brands' :'加入句子互动，打造大模型驱动的数字员工，释放万倍生产力，定义未来工作方式'}</h2>
       <Link href='/join-us'>
         <a target='_blank'>
           <button className='primary-button start-button'>{i18n.language === 'en' ? 'Join Us' :'加入我们'}</button>
@@ -897,7 +897,11 @@ const AboutUsHeroPage: NextPage = () => {
         <div className='right'>
           {
             isZh
-              ? <div>{t('content-1')}</div>
+              ? <div>
+                  <p className="mb-2">句子互动，RPA +AI，打造大模型驱动的领先数字员工，释放万倍生产力，定义未来工作方式。</p>
+                  <p className="mb-2">为加速 AI 应用落地，句子互动根据独创的 Agent 八大生命周期作为理论依据，通过「RPA-运营服务一体化平台」和「AI-Agent工作流引擎」两款产品，将模型池、数据、业务流程以及外部工具打通，助力企业数智化转型。</p>
+                  <p className="">已为国家电网、中国人保、海底捞、宝洁、字节跳动、腾讯等国内外优秀企业打造高效能数字员工，通过 RPA + AI 重塑业务工作流，助力商业组织成功。</p>
+                </div>
               : (
                 <>
                   <div>{t('content-1')}</div>

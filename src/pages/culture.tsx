@@ -111,7 +111,7 @@ const VideoPage: NextPage = () => {
             <div className="name">李佳芮 CEO</div>
             <Link href="https://blog.juzibot.com/1944/">
               <a className="link" target="_blank">
-                写在句子互动的 2022 年 →
+                写在句子互动的 2024 年 →
               </a>
             </Link>
           </div>
@@ -221,7 +221,7 @@ const CautureHeroPage: NextPage = () => {
 
   return (
     <>
-      <h1>与优秀的人一起，打造私域新生态</h1>
+      <h1>与优秀的人一起，打造大模型驱动的数字员工</h1>
       <Swiper
         spaceBetween={30}
         style={{ width: '100%', borderRadius: 16, marginTop: 40 }}
