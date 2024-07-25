@@ -9,7 +9,7 @@ export function useShowModalMobile() {
         .getElementById('contact-modal')
         ?.setAttribute('style', 'display: flex');
     } else {
-      window.open('https://miaohui.juzibot.com/auth/login', '_blank');
+      window.open('https://ac-bg.juzibot.com/auth/login', '_blank');
     }
   };
 }

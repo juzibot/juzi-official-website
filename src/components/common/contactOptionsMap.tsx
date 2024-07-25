@@ -128,7 +128,7 @@ export const FooterMap = (router: NextRouter) => {
             </span>
             <span>
             {t('login-only')}
-              <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer"> {t('juzibot')}</a>
+              <a href={`https://ac-bg.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer"> {t('juzibot')}</a>
             </span>
           </div>
         </div>
@@ -144,7 +144,7 @@ export const FooterMap = (router: NextRouter) => {
       rpa: (
         <div className="login" style={{ marginTop: i18n.language === 'en' ? 20 : 42 }}>
           {t('have-account')}
-          <a href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">
+          <a href={`https://ac-bg.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`} target="_blank" rel="noreferrer">
           {t('login-now')}
           </a>
         </div>

@@ -12,7 +12,7 @@ export function useShowModal() {
     //if (i18n.language === 'zh') {
       emitter.emit('contact_us', { ...options, type, qrCode });
     //} else {
-    //  window.open('https://miaohui.juzibot.com/auth/login', '_blank');
+    //  window.open('https://ac-bg.juzibot.com/auth/login', '_blank');
     //}
   };
 }

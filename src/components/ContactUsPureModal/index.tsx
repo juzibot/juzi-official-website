@@ -68,7 +68,7 @@ const ContactUsPureModal: FC<Props> = props => {
           <div>
             {t('have-account')}
             <a
-              href={`https://miaohui.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`}
+              href={`https://ac-bg.juzibot.com/auth/login?from=login&rediect=${host + router.pathname}`}
               target="_blank"
               rel="noreferrer"
               className="text-[#F5790D] hover:text-[#F5790D]"
