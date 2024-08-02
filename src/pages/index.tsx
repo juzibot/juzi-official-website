@@ -141,7 +141,7 @@ const Home: NextPage = () => {
               <div className="w-[83.29%] h-[63.1%] absolute left-[8.325%] bottom-[12.06%]">
                 <img className={(cls('w-full h-full', safeCardIndex === 0 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card1-0620.png" />
                 <img className={(cls('w-full h-full', safeCardIndex === 1 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card2-0620.png" />
-                <img className={(cls('w-full h-full', safeCardIndex === 2 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card3-0620.png" />
+                <img className={(cls('w-full h-full', safeCardIndex === 2 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card3-0802.png" />
                 <img className={(cls('w-full h-full', safeCardIndex === 3 ? 'block' : 'hidden'))} alt='' src="/_images/image-page/index-content-safe-card4-0620.png" />
                 <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[18%] cursor-pointer" onClick={() => handleClickTab(0, '0')} />
                 <div className="absolute w-[29%] h-[10%] left-[3.6%] top-[calc(18%+18%)] cursor-pointer" onClick={() => handleClickTab(1, 'calc((15% + (100% - 15% * 4)/3) * 1)')}  />
