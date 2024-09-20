@@ -968,7 +968,7 @@ const AboutUsPage: NextPage = () => {
         const dp = new DPlayer({
           container: document.getElementById('video'),
             video: {
-              url: 'https://cdn-official-website.juzibot.com/images/about-us/about-juzi-20240516.mp4',
+              url: 'https://cdn-official-website.juzibot.com/images/about-us/about-juzi-20240920.mp4',
               pic: 'https://cdn-official-website.juzibot.com/images/about-us/about-juzi-cover-20240920.png'
             },
         });
