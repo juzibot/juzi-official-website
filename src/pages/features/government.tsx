@@ -34,7 +34,7 @@ const Home: NextPage = () => {
     return (
       <div className='m-auto relative'>
         <Seo page="features-government" />
-        <img className='w-full' alt='' src='/_images/image-page/government-top.png' />
+        <img className='w-full' alt='' src='/_images/image-page/government-top-20240920.png' />
         <div className="logos-wall">
           <div className="container">
             <h1 className="title" style={{fontSize: 20, lineHeight:2, padding: 8}}>{t('logos-wall-title')}</h1> 

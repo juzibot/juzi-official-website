@@ -1032,11 +1032,11 @@ const AboutUsPage: NextPage = () => {
           </div>
         </>
       ) : null}
-      <div className='wrapper certificates'>
+      {/* <div className='wrapper certificates'>
             <div className='container' style={{minWidth:1200}}>
               <Certificates />
             </div>
-          </div>
+          </div> */}
       {isZh ? (
         <> 
           <div className='wrapper news'>

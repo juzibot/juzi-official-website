@@ -19,7 +19,7 @@ const MobileIndexPage: NextPage<{}> = () => {
     <div className="relative">
       <Seo page="homepage" />
       <div className='index-mobile relative'>
-        <img className='w-full' src="/_images/image-page/index-top-bg-m.png" alt='' />
+        <img className='w-full' src="/_images/image-page/index-top-bg-m-20240920.png" alt='' />
         <div className="absolute top-[12.0%] w-full font-sans">
           {isZh ? (
             <>
@@ -83,7 +83,7 @@ const MobileIndexPage: NextPage<{}> = () => {
 
       { isZh ? (
         <>
-          <img className='w-full' alt='' src="/_images/image-page/index-content-20240620-1-m.png" />
+          <img className='w-full' alt='' src="/_images/image-page/index-content-20240920-1-m.png" />
           <LlmIntegration />
           <img className='w-full' alt='' src="/_images/image-page/index-content-20240802-3-m.png" />
         </>

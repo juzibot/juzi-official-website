@@ -42,7 +42,7 @@ const PracticeGuidePage: NextPage = () => {
       <div className='m-auto'>
         <Seo page="features-ai" />
         <div className="relative">
-          <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-1-m.png" />
+          <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0920-1-m.png" />
           <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-2-m.png" />
           <img className='w-full' alt='' src="/_images/image-page/practice-guide-content-0524-3-m.png" />
 
@@ -99,7 +99,7 @@ const PracticeGuidePage: NextPage = () => {
         </Link>
       </div>
 
-      <img className='w-full' alt='' src='/_images/image-page/practice-guide-content-0524-1.png' />
+      <img className='w-full' alt='' src='/_images/image-page/practice-guide-content-0920-1.png' />
       <img className='w-full' alt='' src='/_images/image-page/practice-guide-content-0524-2.png' />
       <img className='w-full' alt='' src='/_images/image-page/practice-guide-content-0524-3.png' />
       <div className="wrapper appeal-bar">

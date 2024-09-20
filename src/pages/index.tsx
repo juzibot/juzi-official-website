@@ -51,7 +51,7 @@ const Home: NextPage = () => {
     <div className={i18n.language}>
       <Seo page="homepage" />
       <div
-        style={{ backgroundImage: 'url(/_images/image-page/index-top-bg-3.png)'}}
+        style={{ backgroundImage: 'url(/_images/image-page/index-top-bg-3-20240920.png)'}}
         className="h-[calc(100vh-0px)] bg-cover flex justify-center items-center" 
       >
         <div className="flex flex-col justify-center items-center mt-[180px]">
@@ -132,7 +132,7 @@ const Home: NextPage = () => {
       <div>
         {isZh ? (
           <>
-            <img className='w-full' alt='' src="/_images/image-page/index-content-20240620-1.png" />
+            <img className='w-full' alt='' src="/_images/image-page/index-content-20240920-1.png" />
             <LlmIntegration />
             <img className='w-full' alt='' src="/_images/image-page/index-content-20240715-3.png" />
             <div className="relative">

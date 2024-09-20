@@ -393,24 +393,6 @@ const HeaderMenu: NextPage<IMenuItemProps> = ({
   );
 };
 
-const WeworkBar: NextPage = () => {
-  return (
-    <Link href="https://work.weixin.qq.com/">
-      <a target="_blank" rel="noreferrer">
-        <div className="wework-bar">
-          <Image
-            src="https://cdn-official-website.juzibot.com/images/icons/wework.svg"
-            width="20"
-            height="20"
-            alt="wework-icon"
-          />
-          <span>企业微信官方服务商</span>
-        </div>
-      </a>
-    </Link>
-  );
-};
-
 const headerbarExtraClassMap: { [path: string]: string } = {
   '/about-us': 'about-us',
   '/features/': 'feature-page-header',

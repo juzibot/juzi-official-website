@@ -58,7 +58,7 @@ const HeroPage: NextPage = () => {
     <>
       <div className="bg-red pt-8 text-white">
         <h1 className="px-4 text-[1.75rem] text-center text-white font-bold mb-3">面向大组织的对话式营销云</h1>
-        <p className="px-4 text-[13px]">面向大组织的对话式营销云，助力互联网时代党政军、央国企等大型组织建立以社交关系为核心（如 5G 消息、企业微信、飞书、钉钉等）为核心的营销体系，高效触达与深度连接数以千万计的老百姓和终端用户，让消息触达和营销事半功倍。全力助力大型组织实现高效的数智化转型。</p>
+        <p className="px-4 text-[13px]">面向大组织的对话式营销云，助力互联网时代党政军、央国企等大型组织建立以社交关系为核心（如 5G 消息、飞书、钉钉等）为核心的营销体系，高效触达与深度连接数以千万计的老百姓和终端用户，让消息触达和营销事半功倍。全力助力大型组织实现高效的数智化转型。</p>
         <div className="mx-4 px-4 bg-[#F9F9F9] rounded-3xl h-12 pl-4 pr-1 flex justify-between items-center max-w-[400px] border border-solid border-[#EEEEEE]">
           <Input
             className="!bg-[#F9F9F9] !border-none hover:!border-0 focus:!border-0 focus:!shadow-none !placeholder-[#AAB9CA]"
