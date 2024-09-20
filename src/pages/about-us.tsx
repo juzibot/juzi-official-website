@@ -232,89 +232,89 @@ const NewsPage: NextPage = () => {
   );
 };
 
-const Certificates: NextPage = () => {
-  const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
-  const [current, setCurrent] = useState(1);
-  const [imageLoadedCount, setImageLoadedCount] = useState(0);
-  const { t } = useTranslation('about-us');
-  const TOTAL_COUNT = 18;
-  useEffect(() => {
-    if (swiper) {
-      setTimeout(() => {
-        swiper.slideTo(1);
-      }, 1000);
-    }
-  }, [imageLoadedCount]);
-  return (
-    <>
-      <h1>{t('awards-title')}</h1>
-      <Swiper
-        className='certificate-swiper'
-        slidesPerView='auto'
-        centeredSlides
-        spaceBetween={30}
-        autoplay
-        style={{ width: '100%' }}
-        onSwiper={s => {
-          setSwiper(s);
-          s.slideNext();
-        }}
-        observer
-        // controller={{ control: swiper }}
-      >
-        {Array(TOTAL_COUNT)
-          .fill(null)
-          .map((_, idx) => {
-            return (
-              <SwiperSlide key={idx} className='slide-item'>
-                <img
-                  src={`https://cdn-official-website.juzibot.com/images/about-us/certificate/图-${
-                    idx + 1
-                  }.png`}
-                  alt='certificate'
-                  draggable='false'
-                  onLoad={() => {
-                    setImageLoadedCount(imageLoadedCount + 1);
-                  }}
-                ></img>
-              </SwiperSlide>
-            );
-          })}
-      </Swiper>
-      <div className='slider'>
-        <div
-          className={`left ${current === 1 ? 'disable' : ''}`}
-          onClick={() => {
-            if (current - 1 > 0) {
-              swiper?.slideTo(current - 1);
-              setCurrent(current - 1);
-            }
-          }}
-        >
-          <img
-            src='https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg'
-            alt='arrow'
-          ></img>
-        </div>
+// const Certificates: NextPage = () => {
+//   const [swiper, setSwiper] = useState<SwiperType | undefined>(undefined);
+//   const [current, setCurrent] = useState(1);
+//   const [imageLoadedCount, setImageLoadedCount] = useState(0);
+//   const { t } = useTranslation('about-us');
+//   const TOTAL_COUNT = 18;
+//   useEffect(() => {
+//     if (swiper) {
+//       setTimeout(() => {
+//         swiper.slideTo(1);
+//       }, 1000);
+//     }
+//   }, [imageLoadedCount]);
+//   return (
+//     <>
+//       <h1>{t('awards-title')}</h1>
+//       <Swiper
+//         className='certificate-swiper'
+//         slidesPerView='auto'
+//         centeredSlides
+//         spaceBetween={30}
+//         autoplay
+//         style={{ width: '100%' }}
+//         onSwiper={s => {
+//           setSwiper(s);
+//           s.slideNext();
+//         }}
+//         observer
+//         // controller={{ control: swiper }}
+//       >
+//         {Array(TOTAL_COUNT)
+//           .fill(null)
+//           .map((_, idx) => {
+//             return (
+//               <SwiperSlide key={idx} className='slide-item'>
+//                 <img
+//                   src={`https://cdn-official-website.juzibot.com/images/about-us/certificate/图-${
+//                     idx + 1
+//                   }.png`}
+//                   alt='certificate'
+//                   draggable='false'
+//                   onLoad={() => {
+//                     setImageLoadedCount(imageLoadedCount + 1);
+//                   }}
+//                 ></img>
+//               </SwiperSlide>
+//             );
+//           })}
+//       </Swiper>
+//       <div className='slider'>
+//         <div
+//           className={`left ${current === 1 ? 'disable' : ''}`}
+//           onClick={() => {
+//             if (current - 1 > 0) {
+//               swiper?.slideTo(current - 1);
+//               setCurrent(current - 1);
+//             }
+//           }}
+//         >
+//           <img
+//             src='https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg'
+//             alt='arrow'
+//           ></img>
+//         </div>
 
-        <div
-          className={`right ${current === TOTAL_COUNT - 3 ? 'disable' : ''}`}
-          onClick={() => {
-            if (current < TOTAL_COUNT - 3) {
-              swiper?.slideTo(current + 1);
-              setCurrent(current + 1);
-            }
-          }}
-        >
-          <img
-            src='https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg'
-            alt='arrow'
-          ></img>
-        </div>
-      </div>
-    </>
-  );
-};
+//         <div
+//           className={`right ${current === TOTAL_COUNT - 3 ? 'disable' : ''}`}
+//           onClick={() => {
+//             if (current < TOTAL_COUNT - 3) {
+//               swiper?.slideTo(current + 1);
+//               setCurrent(current + 1);
+//             }
+//           }}
+//         >
+//           <img
+//             src='https://cdn-official-website.juzibot.com/images/icons/arrow-right.svg'
+//             alt='arrow'
+//           ></img>
+//         </div>
+//       </div>
+//     </>
+//   );
+// };
 
 const CustomerDisplay: NextPage = () => {
   return (
@@ -1032,11 +1032,11 @@ const AboutUsPage: NextPage = () => {
           </div>
         </>
       ) : null}
-      <div className='wrapper certificates'>
+      {/* <div className='wrapper certificates'>
             <div className='container' style={{minWidth:1200}}>
               <Certificates />
             </div>
-          </div>
+          </div> */}
       {isZh ? (
         <> 
           <div className='wrapper news'>

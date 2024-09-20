@@ -25,7 +25,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         <Seo page="features-ai" />
         <div className="relative">
         { isZh ? (
-          <img className='w-full' alt='' src="/_images/image-page/ai-top-20240516-m.png"/>
+          <img className='w-full' alt='' src="/_images/image-page/ai-top-20240920-m.png"/>
         ) : 
           <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-m-en.png"/>
         }
@@ -70,7 +70,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         </div>
         {isZh ? (
           <>
-            <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-1-m.png' />
+            <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240920-1-m.png' />
             <LlmIntegration />
             <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-3-m.png' />
           </>
@@ -96,7 +96,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       <Seo page="features-ai" />
       <div className="relative">
       {isZh ? (
-        <img className='w-full' alt='' src="/_images/image-page/ai-top-20240516.png"/>
+        <img className='w-full' alt='' src="/_images/image-page/ai-top-20240920.png"/>
       ): 
         <img className='w-full' alt='' src="/_images/image-page/ai-top-20240206-en.png"/>
       }
@@ -141,7 +141,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       </div>
       {isZh ? (
         <>
-          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-1.jpg' />
+          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240920-1.jpg' />
           <LlmIntegration />
           <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-3.jpg' />
         </>

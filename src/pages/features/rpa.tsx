@@ -39,7 +39,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         <Seo page="features-rpa" />
         <div className="relative">
         { isZh ? (
-          <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240516-m.png"/>
+          <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240920-m.png"/>
         ) : 
           <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206-m-en.png"/>
         }
@@ -54,7 +54,7 @@ const CustomerAcquisitionPage: NextPage = () => {
                   options={{
                     wrapperClassName: 'text-[7vw] text-[#0555FF]',
                     cursorClassName: 'text-[#0555FF]',
-                    strings: ['企业微信', '微信客服', '微信公众号', '小程序', 'WhatsApp', '飞书', '5G消息', '小红书', '抖音'],
+                    strings: ['微信客服', '微信公众号', '小程序', 'WhatsApp', '飞书', '5G消息', '小红书', '抖音'],
                     autoStart: true,
                     loop: true,
                   }}
@@ -83,7 +83,7 @@ const CustomerAcquisitionPage: NextPage = () => {
           </div>
         </div>
         { isZh ? (
-        <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206-m.png' />
+        <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240920-m.png' />
         ): 
         <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206-m-en.png' />
         }
@@ -103,7 +103,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       <Seo page="features-rpa" />
       <div className="relative">
       { isZh ? (
-        <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240516.png"/>
+        <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240920.png"/>
       ):
         <img className='w-full' alt='' src="/_images/image-page/rpa-top-20240206-en.png"/>
       }
@@ -118,7 +118,7 @@ const CustomerAcquisitionPage: NextPage = () => {
                 options={{
                   wrapperClassName: 'text-[65px] text-[#0555FF]',
                   cursorClassName: 'text-[#0555FF]',
-                  strings: ['企业微信', '微信客服', '微信公众号', '小程序', 'WhatsApp', '飞书', '5G消息', '小红书', '抖音'],
+                  strings: ['微信客服', '微信公众号', '小程序', 'WhatsApp', '飞书', '5G消息', '小红书', '抖音'],
                   autoStart: true,
                   loop: true,
                 }}
@@ -147,7 +147,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         </div>
       </div>
       { isZh ? (
-      <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206.png' />
+      <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240920.png' />
       ): 
       <img className='w-full' alt='' src='/_images/image-page/rpa-middle-20240206-en.png' style={{marginTop:-250}} />
       }

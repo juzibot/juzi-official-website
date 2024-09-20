@@ -23,7 +23,7 @@ const CustomerAcquisitionPage: NextPage = () => {
     return (
       <div className='m-auto pt-[50px] relative'>
         <Seo page="features-case" />
-        <img className='w-full' alt='' src="/_images/image-page/case-20231023-m.png" />
+        <img className='w-full' alt='' src="/_images/image-page/case-20240920-m.png" />
         <div
           onClick={() => setShowModal(true)}
           className='w-[152px] h-[56px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[9.3%] left-[50%] cursor-pointer'
@@ -55,7 +55,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       >
         {t('lets-talk')}
       </div>
-      <img className='w-full' alt='' src="/_images/image-page/case-20231023.png" />
+      <img className='w-full' alt='' src="/_images/image-page/case-20240920.png" />
       <div className="wrapper appeal-bar">
         <div className="container">
           <FooterBarWithButton 
