@@ -76,6 +76,15 @@
         margin-inline-start: calc(88vw - 265px);
       }
     }
+    .header-right-no-contact{
+      &.zh {
+        margin-inline-start: calc(87vw - 0px) !important;
+      }
+
+      &.en {
+        margin-inline-start: calc(88vw - 0px) !important;
+      }
+    }
 
     .header-right .menu-item {
       margin: 0 18px;

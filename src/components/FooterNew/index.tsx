@@ -23,7 +23,7 @@ const Footer: NextPage = () => {
           title: t('products-1'),
           url: t('products-1-url'),
         },
-        { title: t('products-2'), url: t('products-2-url') },
+        // { title: t('products-2'), url: t('products-2-url') },
       ]
     },
     // i18n.language === 'zh'

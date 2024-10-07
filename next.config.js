@@ -35,6 +35,11 @@ module.exports = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/features/rpa',
+        destination: '/404',
+        permanent: true,
+      },
     ];
   },
 };

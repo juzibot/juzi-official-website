@@ -9,6 +9,7 @@ import ContactUsModal from '@src/components/ContactUsModal';
 import { useShowModal } from '@src/utils/showModal';
 import FooterBarWithButton from '@src/components/FooterBarWithButton';
 import { useTranslation } from 'react-i18next';
+import { HIDE_CONTACT_US } from '@src/config';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const { t } = useTranslation('common');
@@ -48,13 +49,20 @@ const CustomerAcquisitionPage: NextPage = () => {
   return (
     <div className='m-auto pt-[50px] relative'>
       <Seo page="features-case" />
-      <div
-        onClick={() => showPcModal({ qrCode: 'sf-04' })}
-        className='w-[162px] bg-[#0555FF] h-[60px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[16.75%] left-[50%] cursor-pointer'
-        style={{ transform: 'translate(-50%)', boxShadow: ' 0px 35px 50px -15px rgba(52, 128, 239, 0.3)' }}
-      >
-        {t('lets-talk')}
-      </div>
+      {!HIDE_CONTACT_US ? (
+        <div
+          onClick={() => showPcModal({ qrCode: 'sf-04' })}
+          className='w-[162px] bg-[#0555FF] h-[60px] rounded-[100px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[17.45%] left-[50%] cursor-pointer'
+          style={{ transform: 'translate(-50%)', boxShadow: ' 0px 35px 50px -15px rgba(52, 128, 239, 0.3)' }}
+        >
+          {t('lets-talk')}
+        </div>
+      ) : (
+        <div
+          className='w-[182px] bg-white h-[120px] rounded-[10px] flex justify-center items-center text-[18px] font-semibold text-white absolute top-[17.35%] left-[50%] cursor-pointer'
+          style={{ transform: 'translate(-50%)' }}
+        />
+      )}
       <img className='w-full' alt='' src="/_images/image-page/case-20240920.png" />
       <div className="wrapper appeal-bar">
         <div className="container">

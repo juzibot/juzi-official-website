@@ -12,6 +12,7 @@ import HeroPageNew from '@src/components/index/HeroPageNew';
 import SolutionPageNew from '@src/components/index/SolutionPageNew';
 import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import LogosWallNew from '@src/components/index/LogosWallNew';
+import { HIDE_CONTACT_US } from '@src/config';
 
 const CustomerAcquisitionPage: NextPage = () => {
   const { t, i18n } = useTranslation('homepage');
@@ -25,11 +26,16 @@ const CustomerAcquisitionPage: NextPage = () => {
         <Seo page="features-customer" />
         { isZh ? (
           <>
-          <img className='w-full' alt='' src='/_images/image-page/customer-0.png' /><div
-            onClick={() => setShowModal(true)}
-            className='w-[calc(42%)] h-[calc(5%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[25.7%] left-[49%] cursor-pointer'
-            style={{ transform: 'translate(-50%)' }}
-          ></div><div className="wrapper appeal-bar">
+          <img className='w-full' alt='' src='/_images/image-page/customer-0-no-button.png' />
+          {!HIDE_CONTACT_US &&(
+            <div
+              onClick={() => setShowModal(true)}
+              className='bg-[#0555FF] text-white w-[calc(41%)] h-[48px] rounded-full flex justify-center items-center text-[18px] font-semibold absolute top-[25.6%] left-[48.9%] cursor-pointer'
+              style={{ transform: 'translate(-50%)', boxShadow: '0px 35px 50px -15px rgba(52, 128, 239, 0.30)' }}
+            >获取解决方案</div>
+          )}
+
+          <div className="wrapper appeal-bar">
               <div className="container !w-[100%]">
                 <FooterBarWithButton
                   contactUsOption={{ qrCode: 'sf-04' }} />
@@ -69,11 +75,19 @@ const CustomerAcquisitionPage: NextPage = () => {
       <Seo page="features-customer" />
       { isZh ? (
         <>
+      {HIDE_CONTACT_US ? (
+        <div
+          className='bg-white w-[calc(13.4%)] h-[calc(12.8%)] rounded flex justify-center items-center text-[18px] font-semibold text-white absolute top-[32.5%] left-[50%] cursor-pointer shadow-lg shadow-white'
+          style={{ transform: 'translate(-50%)' }}
+        />
+      ) : (
         <div
           onClick={() => showPcModal({ qrCode: 'sf-04' })}
-          className='w-[calc(15%)] h-[calc(8.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[28.7%] left-[50%] cursor-pointer'
-          style={{ transform: 'translate(-50%)' }}
-        ></div><img className='w-full' alt='' src='/_images/image-page/customer-0.svg' /><div className="wrapper appeal-bar">
+          className='bg-[#0555FF] text-white w-[calc(13.4%)] h-[calc(5.95%)] rounded-full flex justify-center items-center text-[18px] font-semibold absolute top-[32.5%] left-[50%] cursor-pointer'
+          style={{ transform: 'translate(-50%)', boxShadow: '0px 35px 50px -15px rgba(52, 128, 239, 0.30)' }}
+        >获取解决方案</div>
+      )}
+        <img className='w-full' alt='' src='/_images/image-page/customer-0.svg' /><div className="wrapper appeal-bar">
             <div className="container">
               <FooterBarWithButton
                 contactUsOption={{ qrCode: 'sf-04' }} />
@@ -98,11 +112,13 @@ const CustomerAcquisitionPage: NextPage = () => {
                   {t('government-title')}
                 </h1>
                 <div className="description">{t('government-body')}</div>
-                <ContactUsPureModalWithButton>
-                  <button className="white-button-pure-en start-button !shadow-none">
-                    {t('start-free')}
-                  </button>
-                </ContactUsPureModalWithButton>
+                {!HIDE_CONTACT_US && (
+                  <ContactUsPureModalWithButton>
+                    <button className="white-button-pure-en start-button !shadow-none">
+                      {t('start-free')}
+                    </button>
+                  </ContactUsPureModalWithButton>
+                )}
               </div>
             </div>
           </div>

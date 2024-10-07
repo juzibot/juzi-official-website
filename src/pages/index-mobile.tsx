@@ -10,6 +10,7 @@ import { RightArrow } from '@src/components/Icon';
 import { ContactUsModalWithButton } from '@src/components/ContactUsModal';
 import { useTranslation } from 'react-i18next';
 import { LlmIntegration } from "@src/components/LlmIntegration";
+import { HIDE_CONTACT_US } from "@src/config";
 
 const MobileIndexPage: NextPage<{}> = () => {
   const { t, i18n } = useTranslation('common');
@@ -73,9 +74,11 @@ const MobileIndexPage: NextPage<{}> = () => {
             <div className="w-[calc(100vw-60px)] h-[42vw] p-5 rounded-xl bg-black flex flex-col">
               <div className="text-white font-medium mb-[1vw]" style={{ fontSize: i18n.language === 'en' ? 'calc(4vw)' : 'calc(4vw)' }}>{t('discover-products')}</div>
               <p className="flex-1 text-white" style={{ fontSize: i18n.language === 'en' ? '3vw' : '3vw' }}>{t('discover-products-subtitle')}</p>
-              <ContactUsModalWithButton>
-                <span className="text-[#EF3BFB] text-[3vw] inline-flex items-center gap-2 cursor-pointer">{t('contact')} <RightArrow /> </span>
-              </ContactUsModalWithButton>
+              {!HIDE_CONTACT_US && (
+                <ContactUsModalWithButton>
+                  <span className="text-[#EF3BFB] text-[3vw] inline-flex items-center gap-2 cursor-pointer">{t('contact')} <RightArrow /> </span>
+                </ContactUsModalWithButton>
+              )}
             </div>
           </div>
         </div>

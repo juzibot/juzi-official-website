@@ -17,6 +17,7 @@ import LogosWallNew from '../components/index/LogosWallNew';
 import { LlmLogos } from '@src/components/LlmLogos';
 import { LlmIntegration } from '@src/components/LlmIntegration';
 import cls from 'classnames';
+import { HIDE_CONTACT_US } from '@src/config';
 
 const Home: NextPage = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
@@ -122,9 +123,11 @@ const Home: NextPage = () => {
               <div className="w-[400px] h-[170px] p-5 rounded-xl bg-black flex flex-col">
                 <div className="text-white text-[21px] font-medium mb-2">{t('discover-products')}</div>
                 <p className="flex-1 text-white">{t('discover-products-subtitle')}</p>
-                <ContactUsModalWithButton contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}>
-                  <span className="text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer">{t('contact')} <RightArrow /> </span>
-                </ContactUsModalWithButton>
+                {!HIDE_CONTACT_US && (
+                  <ContactUsModalWithButton contactUsOption={{ type: 'ai', qrCode: 'sf-02' }}>
+                    <span className="text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer">{t('contact')} <RightArrow /> </span>
+                  </ContactUsModalWithButton>
+                )}
               </div>
             </div>
         </div>

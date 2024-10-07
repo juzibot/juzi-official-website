@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { IMenuItemProps } from '@src/interfaces';
 import { useState, useEffect } from 'react';
-import { host } from '@src/config';
+import { HIDE_CONTACT_US, host } from '@src/config';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
@@ -161,6 +161,17 @@ const SolutionsMenu: NextPage = () => {
 
 const ProductMenu: NextPage = () => {
   const { t, i18n } = useTranslation('common');
+  return (
+    <div className="dropdown-menu product !h-[100px] !w-[400px]" style={{ transform: "translate(-135px, -6px)"}}>
+      <div className="box">
+        <MenuItem
+          href="/features/ai"
+        >
+          {t('products-1')}
+        </MenuItem>
+      </div>
+    </div>
+  );
   return (
     <div className="dropdown-menu product !h-[150px] !w-[400px]" style={{ transform: "translate(-135px, -6px)"}}>
       <div className="box">
@@ -558,7 +569,7 @@ const HeaderBar: NextPage = () => {
           </menu>
         } 
 
-          <menu className={`header-right ${!isZh ? 'en' : 'zh'}`}>
+          <menu className={`header-right ${!isZh ? 'en' : 'zh'} ${HIDE_CONTACT_US ? 'header-right-no-contact' : ''}`}>
             <HeaderMenu
               linkTarget="_blank"
               onClick={() => {
@@ -568,43 +579,46 @@ const HeaderBar: NextPage = () => {
             >
               {isZh ? 'EN' : '中文'}
             </HeaderMenu>
+            {!HIDE_CONTACT_US && (
               <Link href="#">
                 <a
                   className={`menu-item primary-link ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
                   draggable="false"
                   onClick={() => {
                     let qrCode: ContactUsOption['qrCode'] = 'sf-01';
-                     if (pathname === '/about-us') {
+                    if (pathname === '/about-us') {
                       qrCode = 'juzibot-01';
-                     } else if (pathname === '/culture') {
+                    } else if (pathname === '/culture') {
                       qrCode = 'juzibot-02';
-                     }
+                    }
                     showModal({ qrCode });
                   }}
                 >
                   {t('lets-talk')}
                 </a>
               </Link>
-
-            <div
-              className={`menu-item primary-link round ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
-              draggable="false"
-              onClick={() => {
-                let qrCode: ContactUsOption['qrCode'] = 'sf-01';
-                 if (pathname === '/about-us') {
-                  qrCode = 'juzibot-01';
-                 } else if (pathname === '/culture') {
-                  qrCode = 'juzibot-02';
-                 }
-                showModal({ qrCode });
-              }}
-              style={{
-                userSelect: 'none',
-                cursor: 'pointer',
-              }}
-            >
-              {t('login')}
-            </div>
+            )}
+            {!HIDE_CONTACT_US && (
+              <div
+                className={`menu-item primary-link round ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
+                draggable="false"
+                onClick={() => {
+                  let qrCode: ContactUsOption['qrCode'] = 'sf-01';
+                  if (pathname === '/about-us') {
+                    qrCode = 'juzibot-01';
+                  } else if (pathname === '/culture') {
+                    qrCode = 'juzibot-02';
+                  }
+                  showModal({ qrCode });
+                }}
+                style={{
+                  userSelect: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                {t('login')}
+              </div>
+            )}
           </menu>
         </div>
       </header>
