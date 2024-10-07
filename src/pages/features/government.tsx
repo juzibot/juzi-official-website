@@ -7,6 +7,7 @@ import AppealBarNew from '@src/components/index/AppealBarNew';
 import HeroPageNew from '@src/components/index/HeroPageNew';
 import LogosWallNew from '@src/components/index/LogosWallNew';
 import SolutionPageNew from '@src/components/index/SolutionPageNew';
+import { HIDE_CONTACT_US } from '@src/config';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
@@ -64,11 +65,13 @@ const Home: NextPage = () => {
               {t('government-title')}
             </h1>
             <div className="description">{t('government-body')}</div>
-            <ContactUsPureModalWithButton>
-              <button className="white-button-pure start-button bg-white text-red !shadow-none">
-                {t('start-free')}
-              </button>
-            </ContactUsPureModalWithButton>
+            {!HIDE_CONTACT_US && (
+              <ContactUsPureModalWithButton>
+                <button className="white-button-pure start-button bg-white text-red !shadow-none">
+                  {t('start-free')}
+                </button>
+              </ContactUsPureModalWithButton>
+            )}
           </div>
         </div>
       </div>

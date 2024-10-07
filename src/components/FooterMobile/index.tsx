@@ -12,6 +12,7 @@ import { useSessionStorageValue } from '@react-hookz/web';
 import ContactForm from '../ContactForm';
 import { ContactUsModalWithButton } from '../ContactUsModal';
 import cls from 'classnames';
+import { HIDE_CONTACT_US } from '@src/config';
 
 const { Panel } = Collapse;
 const FooterMobile: NextPage = () => {
@@ -256,11 +257,13 @@ const FooterMobile: NextPage = () => {
         </div>
 
         <div className={cx('fixed bottom-0 bg-transparent w-full z-50')}>
-          { !isCloseFixed && fixedNode }
+          {!HIDE_CONTACT_US && !isCloseFixed && fixedNode }
           <div className="px-4 flex h-[64px] items-center bg-white">
-            <ContactUsModalWithButton>
-              <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-[#0555FF] !text-[#0555FF] ">{t('bullet-button-1')}</Button>
-            </ContactUsModalWithButton>
+            {!HIDE_CONTACT_US && (
+              <ContactUsModalWithButton>
+                <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-[#0555FF] !text-[#0555FF] ">{t('bullet-button-1')}</Button>
+              </ContactUsModalWithButton>
+            )}
             <Button
               block
               size="large"

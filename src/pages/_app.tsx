@@ -15,6 +15,7 @@ import FooterNew from '@src/components/FooterNew';
 import { useRouter } from 'next/router';
 // import { setMobileStatusBarColor } from '@src/utils/mobileStatusBar';
 import HeaderBar from '@src/components/HeaderBar';
+import { HIDE_CONTACT_US } from '@src/config';
 // import { juziAnalysis } from '@src/utils/analysis';
 
 
@@ -70,7 +71,7 @@ const JuziApp: NextPage<AppProps> = ({ Component, pageProps }) => {
           })();
         `}
       </Script>
-      {!isSmallDevice && <ContactButtonNew />}
+      {!isSmallDevice && !HIDE_CONTACT_US && <ContactButtonNew />}
     </>
   );
 };

@@ -6,6 +6,7 @@ import { useMediaQuery } from '@react-hookz/web';
 import ContactUsModal from '../ContactUsModal';
 import { pick } from 'lodash';
 import { useTranslation } from 'react-i18next';
+import { HIDE_CONTACT_US } from '@src/config';
 
 type Props = {
   // title?: string
@@ -41,13 +42,13 @@ const FooterBarWithButton = (props: Props = {}) => {
 
   const { t, i18n } = useTranslation('common');
   const pcTitle = (
-    <div className={cls('title')}>
+    <div className={cls('title', HIDE_CONTACT_US && '!mb-0')}>
       <span>{t('title-1')}</span>
       <span className="text-[#EF3BFB] ml-2">{t('title-2')}</span>
     </div>
   );
   const mobileTitle = (
-    <div className={cls('title')}>
+    <div className={cls('title', HIDE_CONTACT_US && '!mb-0')}>
       <div className='text-center text-[28px]' style={{marginLeft: i18n.language === 'en' ? 0 : '2vw' }}>{t('mobile-title-1')}</div>
       <div style={{ fontSize: i18n.language === 'en' ? "60%" : 20 }}>
         <span>{t('mobile-title-2')}</span>
@@ -59,13 +60,15 @@ const FooterBarWithButton = (props: Props = {}) => {
   return (
     <div className="content" onClick={onClick}>
       {isMobile ? mobileTitle : pcTitle}
-      <span
-        style={{ background: 'linear-gradient(96deg, #EF3BFB 0.67%, #6721FF 98.48%)' }}
-        className="rounded-full px-10 py-4 text-white cursor-pointer text-[18px]"
-        onClick={handleClick}
-      >
-        {t('contact')}
-      </span>
+      { !HIDE_CONTACT_US && (
+        <span
+          style={{ background: 'linear-gradient(96deg, #EF3BFB 0.67%, #6721FF 98.48%)' }}
+          className="rounded-full px-10 py-4 text-white cursor-pointer text-[18px]"
+          onClick={handleClick}
+        >
+          {t('contact')}
+        </span>
+      ) }
       <ContactUsModal
         {...pick(props.contactUsOption, ['type', 'qrCode'])}
         open={showMobileModal}

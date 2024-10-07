@@ -42,7 +42,8 @@ const MobileMenu = () => {
           <div className='relative'>
             <img onClick={() => setShowMenu(false)} className="absolute w-[24px] right-[28px] top-[-12px] cursor-pointer" src="https://s3.cn-north-1.amazonaws.com.cn/xiaoju-material/public/141abebc-9772-4a56-8c38-fe84f8f9c841/close.png" alt="close" />
             <div
-              className='mt-[16px] h-[188px] px-[28px]'
+              // className='mt-[16px] h-[188px] px-[28px]'
+              className='mt-[16px] h-[108px] px-[28px]'
               style={{ borderBottom: '1px solid rgba(221, 227, 234, 0.5)' }}
             >
               <div className='text-[17px] leading-[24px] mt-[24px] font-bold text-[#364256]'>
@@ -53,11 +54,11 @@ const MobileMenu = () => {
                   {t('products-1')}
                 </div>
               </Link>
-              <Link href="/features/rpa" passHref>
+              {/* <Link href="/features/rpa" passHref>
                 <div onClick={() => setShowMenu(false)} className='text-[#364256] w-full text-[16px] mt-[32px] inline-block'>
                 {t('products-2')}
                 </div>
-              </Link>
+              </Link> */}
             </div>
             {isZh ? (
               <div
