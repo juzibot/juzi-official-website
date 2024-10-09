@@ -135,7 +135,7 @@ const Home: NextPage = () => {
       <div>
         {isZh ? (
           <>
-            <img className='w-full' alt='' src="/_images/image-page/index-content-20240924-1.png" />
+            <img className='w-full' alt='' src="/_images/image-page/index-content-20240924-1-no-rpa.png" />
             <LlmIntegration />
             <img className='w-full' alt='' src="/_images/image-page/index-content-20240715-3.png" />
             <div className="relative">
