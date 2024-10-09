@@ -92,7 +92,7 @@ const MobileIndexPage: NextPage<{}> = () => {
         </>
       ): 
         <>
-          <img alt="" className='w-full' src="/_images/image-page/index-content-m-en.png" />
+          <img alt="" className='w-full' src="/_images/image-page/index-content-m-en-no-rpa.png" />
           <LlmIntegration />
         </>
       }
