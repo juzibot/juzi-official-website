@@ -72,11 +72,11 @@ const CustomerAcquisitionPage: NextPage = () => {
           <>
             <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240920-1-m.png' />
             <LlmIntegration />
-            <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-3-m.png' />
+            <img className='w-full' alt='' src='/_images/image-page/ai-middle-20241010-3-m.png' />
           </>
         ): 
         <>
-          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240206-m-en.png' />
+          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20241010-m-en.png' />
           <LlmIntegration />
         </>
         }
@@ -143,11 +143,11 @@ const CustomerAcquisitionPage: NextPage = () => {
         <>
           <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240920-1.jpg' />
           <LlmIntegration />
-          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20240516-3.jpg' />
+          <img className='w-full' alt='' src='/_images/image-page/ai-middle-20241010-3.jpg' />
         </>
       ): (
         <>
-          <img className='w-full' style={{marginTop: -60}} alt='' src='/_images/image-page/ai-middle-20240206-en.png' />
+          <img className='w-full' style={{marginTop: -60}} alt='' src='/_images/image-page/ai-middle-20241010-en.png' />
           <LlmIntegration />
         </>
       )
