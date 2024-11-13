@@ -106,6 +106,8 @@ const ContactModal: NextPage = () => {
     useState(false);
   const router = useRouter();
   const [state, setState] = useState<EventType['contact_us']>();
+  // fix ts
+  setState;
   const { t, i18n } = useTranslation(['common']);
   const isZh = i18n.language === 'zh';
 
@@ -135,8 +137,11 @@ const ContactModal: NextPage = () => {
 
   useEffect(() => {
     const onShowEvent = (options: EventType['contact_us']) => {
-      document.getElementById('contact-modal')?.setAttribute('style', 'display: flex');
-      setState({ ...options, type: 'ai' });
+      // fix ts
+      options;
+      window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
+      // document.getElementById('contact-modal')?.setAttribute('style', 'display: flex');
+      // setState({ ...options, type: 'ai' });
     }
     emitter.on('contact_us', onShowEvent);
     return () => {
