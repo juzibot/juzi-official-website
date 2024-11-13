@@ -30,7 +30,7 @@ const CustomerAcquisitionPage: NextPage = () => {
         {!HIDE_CONTACT_US && (
           <div
             onClick={() => setShowModal(true)}
-            className='bg-[#0555FF] w-[calc(41%)] h-[48px] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[29.7%] left-[48.5%] cursor-pointer'
+            className='bg-[#0555FF] w-[calc(41%)] h-[48px] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[28.7%] left-[48.5%] cursor-pointer'
             style={{ transform: 'translate(-50%)', boxShadow: '0px 35px 50px -15px rgba(52, 128, 239, 0.30)' }}
           >获取解决方案</div>
         )}
@@ -53,7 +53,7 @@ const CustomerAcquisitionPage: NextPage = () => {
       ) : (
         <div
           onClick={() => showPcModal({ qrCode: 'sf-04' })}
-          className='w-[calc(13.4%)] h-[calc(5.7%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[32.5%] left-[50%] cursor-pointer'
+          className='w-[calc(13.4%)] h-[calc(7.7%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[29.5%] left-[50%] cursor-pointer'
           style={{ transform: 'translate(-50%)' }}
         ></div>
       )}

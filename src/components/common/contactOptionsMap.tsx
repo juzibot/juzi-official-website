@@ -161,4 +161,5 @@ export const qrCodeMap: { [key in Required<ContactUsOption>['qrCode']]: string }
   'sf-04': '/_images/qrcodes/sf-04.png',
   'juzibot-01': '/_images/qrcodes/juzibot-01.png',
   'juzibot-02': '/_images/qrcodes/juzibot-02.png',
+  'ai-01': '/_images/qrcodes/ai-01.png',
 }

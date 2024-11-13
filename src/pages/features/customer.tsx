@@ -1,6 +1,6 @@
 /* eslint-disable no-unreachable */
 import { useMediaQuery } from '@react-hookz/web';
-import ContactUsModal from '@src/components/ContactUsModal';
+import ContactUsModal, { ContactUsModalWithButton } from '@src/components/ContactUsModal';
 import FooterBarWithButton from '@src/components/FooterBarWithButton';
 import Seo from '@src/components/common/Seo';
 import { useShowModal } from '@src/utils/showModal';
@@ -10,7 +10,6 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import HeroPageNew from '@src/components/index/HeroPageNew';
 import SolutionPageNew from '@src/components/index/SolutionPageNew';
-import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import LogosWallNew from '@src/components/index/LogosWallNew';
 import { HIDE_CONTACT_US } from '@src/config';
 
@@ -83,9 +82,9 @@ const CustomerAcquisitionPage: NextPage = () => {
       ) : (
         <div
           onClick={() => showPcModal({ qrCode: 'sf-04' })}
-          className='bg-[#0555FF] text-white w-[calc(13.4%)] h-[calc(5.95%)] rounded-full flex justify-center items-center text-[18px] font-semibold absolute top-[32.5%] left-[50%] cursor-pointer'
-          style={{ transform: 'translate(-50%)', boxShadow: '0px 35px 50px -15px rgba(52, 128, 239, 0.30)' }}
-        >获取解决方案</div>
+          className=' text-white w-[calc(13.4%)] h-[calc(10.7%)] rounded-full flex justify-center items-center text-[18px] font-semibold absolute top-[28.5%] left-[50%] cursor-pointer'
+          style={{ transform: 'translate(-50%)' }}
+        />
       )}
         <img className='w-full' alt='' src='/_images/image-page/customer-0.svg' /><div className="wrapper appeal-bar">
             <div className="container">
@@ -113,11 +112,11 @@ const CustomerAcquisitionPage: NextPage = () => {
                 </h1>
                 <div className="description">{t('government-body')}</div>
                 {!HIDE_CONTACT_US && (
-                  <ContactUsPureModalWithButton>
+                  <ContactUsModalWithButton>
                     <button className="white-button-pure-en start-button !shadow-none">
                       {t('start-free')}
                     </button>
-                  </ContactUsPureModalWithButton>
+                  </ContactUsModalWithButton>
                 )}
               </div>
             </div>

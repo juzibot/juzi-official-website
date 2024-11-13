@@ -1,4 +1,4 @@
-import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
+import { ContactUsModalWithButton } from '@src/components/ContactUsModal';
 import ContactUsSimpleModal from '@src/components/ContactUsSimpleModal';
 import { HIDE_CONTACT_US } from '@src/config';
 import { NextPage } from 'next';
@@ -17,14 +17,13 @@ const AppealBar: NextPage<{ isRed?: boolean; useSimpleModal?: boolean; imageNode
             {t('appeal-start-free')}
           </button>
         ) : (
-          <ContactUsPureModalWithButton>
+           <ContactUsModalWithButton contactUsOption={{ type: 'ai' }}>
             <button className="white-button start-button !shadow-none">
               {t('appeal-start-free')}
             </button>
-          </ContactUsPureModalWithButton>
+           </ContactUsModalWithButton>
         )
       )}
-
       <ContactUsSimpleModal
         open={showContactUs}
         onCancel={() => setShowContactUs(false)}

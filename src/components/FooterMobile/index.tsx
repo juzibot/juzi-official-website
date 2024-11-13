@@ -143,7 +143,7 @@ const FooterMobile: NextPage = () => {
               <span>{t('contact-us-title')}</span>
             </p>
             <p className="text-[#54657E] text-[15px] text-center mb-2">{t('contact-footer')}</p>
-            <img src='https://cdn-official-website.juzibot.com/images/contact_us_mobile.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
+            <img src='/_images/qrcodes/ai-01.png' height={124} width={124} alt="" className="flex-shrink-0 mr-[10px]" />
           </div>
         ) : (
           <ContactForm
@@ -260,7 +260,7 @@ const FooterMobile: NextPage = () => {
           {!HIDE_CONTACT_US && !isCloseFixed && fixedNode }
           <div className="px-4 flex h-[64px] items-center bg-white">
             {!HIDE_CONTACT_US && (
-              <ContactUsModalWithButton>
+              <ContactUsModalWithButton contactUsOption={{ type: 'ai' }}>
                 <Button block size="large" className="mx-2 h-[44px] !rounded-3xl !border-[#0555FF] !text-[#0555FF] ">{t('bullet-button-1')}</Button>
               </ContactUsModalWithButton>
             )}
