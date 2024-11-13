@@ -53,7 +53,7 @@ const DetentionModal: NextPage<{
     t('miss-out')
   ];
   return (
-    <div className="detention-modal">
+    <div className="detention-modal" style={{ height: i18n.language === 'en' ? 240 : 220 }}>
       <div className="title" style={{ fontSize: i18n.language === 'en' ? 16 : 18 }}>{t('close-contact-question')}</div>
       <div
         className="content"
@@ -136,7 +136,7 @@ const ContactModal: NextPage = () => {
   useEffect(() => {
     const onShowEvent = (options: EventType['contact_us']) => {
       document.getElementById('contact-modal')?.setAttribute('style', 'display: flex');
-      setState(options);
+      setState({ ...options, type: 'ai' });
     }
     emitter.on('contact_us', onShowEvent);
     return () => {
@@ -175,7 +175,7 @@ const ContactModal: NextPage = () => {
     }
   }
 
-  const qrCode = qrCodeMap[state?.qrCode!];
+  const qrCode = qrCodeMap['ai-01'];
   const leftTips = LeftTipMap()[state?.type!] || [];
   const leftStyle = leftStyleMap[state?.type!]
   const appeal = AppealMap()[state?.type!];

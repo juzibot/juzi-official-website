@@ -9,7 +9,7 @@ const TIMEOUT = 5 * 1000;
 export const ContactButtonNew: NextPage = () => {
   const [popupVisible, togglePopupVisible] = useState(false);
   const [autoVisible, toggleAutoVisible] = useState(false);
-  const { t } = useTranslation(['common']);
+  const { t, i18n } = useTranslation(['common']);
 
   const [showContactUsPureModal, setShowContactUsPureModal] = useState(false);
   const showModal = useShowModal();
@@ -23,7 +23,7 @@ export const ContactButtonNew: NextPage = () => {
   return (
     <>
       {autoVisible && !popupVisible ? (
-        <div className="contact-popup">
+        <div className="contact-popup" style={{ height: i18n.language === 'en' ? 130 : 90, bottom: i18n.language === 'en' ? 208 : 230 }}>
           <strong>{t('contact-button-question')}</strong>
           <div>{t('contact-button-click')}</div>
           <div className="close-btn" onClick={() => toggleAutoVisible(false)}>
@@ -46,7 +46,7 @@ export const ContactButtonNew: NextPage = () => {
       ) : null}
 
       {popupVisible ? (
-        <div className="contact-popup">
+        <div className="contact-popup" style={{ height: i18n.language === 'en' ? 130 : 90, bottom: i18n.language === 'en' ? 208 : 230 }}>
           <strong>{t('contact-button-click-1')}</strong>
           <div>{t('contact-button-click-2')}</div>
         </div>

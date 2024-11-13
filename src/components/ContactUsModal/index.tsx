@@ -19,7 +19,7 @@ type Props = Pick<ContactUsOption, 'type' | 'qrCode'> & {
   onOk?: () => void,
 }
 
-const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, onCancel, onOk }) => {
+const ContactUsModal: FC<Props> = ({ type = 'ai', qrCode = 'ai-01', open, onCancel, onOk }) => {
   const handleCancel = () => {
     onCancel?.()
   }
@@ -68,7 +68,7 @@ const ContactUsModal: FC<Props> = ({ type = 'default', qrCode = 'sf-01', open, o
       ),
   }}
 
-  const qrCodeUrl = qrCodeMap[qrCode!];
+  const qrCodeUrl = qrCodeMap['ai-01' || qrCode];
   const leftTips = LeftTipMap()[type!] || [];
   const leftStyle = leftStyleMap[type!]
   const appeal = AppealMap()[type!];

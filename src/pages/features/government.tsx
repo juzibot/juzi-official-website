@@ -1,13 +1,13 @@
 /* eslint-disable no-unreachable */
 // import { useMediaQuery } from '@react-hookz/web';
 import { useMediaQuery } from '@react-hookz/web';
-import { ContactUsPureModalWithButton } from '@src/components/ContactUsPureModal';
 import Seo from '@src/components/common/Seo';
 import AppealBarNew from '@src/components/index/AppealBarNew';
 import HeroPageNew from '@src/components/index/HeroPageNew';
 import LogosWallNew from '@src/components/index/LogosWallNew';
 import SolutionPageNew from '@src/components/index/SolutionPageNew';
 import { HIDE_CONTACT_US } from '@src/config';
+import { useShowModal } from '@src/utils/showModal';
 import type { GetStaticProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
@@ -19,6 +19,7 @@ const Home: NextPage = () => {
   const [, setWidth] = useState(0);
   const { t, i18n } = useTranslation('homepage');
   const isZh = i18n.language === 'zh';
+  const showModal = useShowModal();
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () =>
@@ -66,11 +67,9 @@ const Home: NextPage = () => {
             </h1>
             <div className="description">{t('government-body')}</div>
             {!HIDE_CONTACT_US && (
-              <ContactUsPureModalWithButton>
-                <button className="white-button-pure start-button bg-white text-red !shadow-none">
-                  {t('start-free')}
-                </button>
-              </ContactUsPureModalWithButton>
+              <button onClick={() => showModal({ type: 'ai' })} className="white-button-pure start-button bg-white text-red !shadow-none">
+                {t('start-free')}
+              </button>
             )}
           </div>
         </div>
@@ -86,11 +85,9 @@ const Home: NextPage = () => {
             {t('government-title')}
           </h1>
           <div className="description">{t('government-body')}</div>
-          <ContactUsPureModalWithButton>
-            <button className="white-button-pure start-button bg-white text-red !shadow-none">
-              {t('start-free')}
-            </button>
-          </ContactUsPureModalWithButton>
+          <button onClick={() => showModal({ type: 'ai' })} className="white-button-pure start-button bg-white text-red !shadow-none">
+            {t('start-free')}
+          </button>
         </div>
       </div>
     </div>
