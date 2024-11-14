@@ -20,6 +20,8 @@ const FooterMobile: NextPage = () => {
 
   const [isCloseFixed, setIsCloseFixed] = useSessionStorageValue<boolean>('isCloseFixed');
   const [isScanQrcode, setIsScanQrcode] = useState(true);
+  // fix ts
+  setIsScanQrcode;
   const isZh = i18n.language === 'zh';
 
   const menus: (IFooterMenu | undefined)[] = [
@@ -155,7 +157,7 @@ const FooterMobile: NextPage = () => {
           />
         )
       }
-      <div className="text-[#869BB9] text-center mt-1 flex items-center justify-center cursor-pointer" onClick={() => setIsScanQrcode(!isScanQrcode)}>
+      {/* <div className="text-[#869BB9] text-center mt-1 flex items-center justify-center cursor-pointer" onClick={() => setIsScanQrcode(!isScanQrcode)}>
         <svg
           className="icon mr-1"
           viewBox="0 0 1024 1024"
@@ -174,7 +176,7 @@ const FooterMobile: NextPage = () => {
         {isScanQrcode
           ? t('unable-to-scan')
           : t('go-to-scan') }
-      </div>
+      </div> */}
     </div>
   );
   return (

@@ -1,5 +1,5 @@
 import { Modal } from "antd";
-import { FC, Fragment, ReactElement, useState } from "react";
+import { FC, Fragment, ReactElement, useEffect, useState } from "react";
 import { CloseOutlined } from '@ant-design/icons';
 import styles from './index.module.scss';
 import React from "react";
@@ -74,6 +74,13 @@ const ContactUsModal: FC<Props> = ({ type = 'ai', qrCode = 'ai-01', open, onCanc
   const appeal = AppealMap()[type!];
   const footer = FooterMap()[type!];
   const { t } = useTranslation(['common']);
+
+  useEffect(() => {
+    if (open) {
+      window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register');
+      onCancel?.();
+    }
+  }, [open])
 
   return (
     <Modal
