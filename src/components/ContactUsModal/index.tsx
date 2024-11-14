@@ -150,6 +150,10 @@ const ContactUsModalWithButton: FC<{ children: ReactElement, contactUsOption?: C
   const [visible, setVisible] = useState(false);
 
   const handleClick = () => {
+    if (!isMobile) {
+      window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
+      return
+    }
     if (isMobile) {
       setVisible(true);
       return;

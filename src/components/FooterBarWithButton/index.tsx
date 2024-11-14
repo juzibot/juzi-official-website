@@ -29,6 +29,10 @@ const FooterBarWithButton = (props: Props = {}) => {
   const [showMobileModal, setShowMobileModal] = useState(false);
 
   const handleClick = () => {
+    if (!isMobile) {
+      window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
+      return
+    }
     if (onButtonClick) {
       onButtonClick();
       return

@@ -57,7 +57,8 @@ export const ContactButtonNew: NextPage = () => {
         onMouseLeave={() => togglePopupVisible(false)}
         onClick={() => {
           toggleAutoVisible(false);
-          showModal({ qrCode: 'sf-04' });
+          // showModal({ qrCode: 'sf-04' });
+          window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
         }}
       >
         <div className="wave w1"></div>

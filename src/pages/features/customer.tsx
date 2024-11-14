@@ -19,6 +19,8 @@ const CustomerAcquisitionPage: NextPage = () => {
   const [showModal, setShowModal] = useState(false);
   const isSmallDevice = useMediaQuery('only screen and (max-width : 600px)');
   const showPcModal = useShowModal();
+  // fix ts
+  showPcModal;
   if (isSmallDevice) {
     return (
       <div className='m-auto relative'>
@@ -81,7 +83,10 @@ const CustomerAcquisitionPage: NextPage = () => {
         />
       ) : (
         <div
-          onClick={() => showPcModal({ qrCode: 'sf-04' })}
+          onClick={() => {
+            // showPcModal({ qrCode: 'sf-04' })
+            window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
+          }}
           className=' text-white w-[calc(13.4%)] h-[calc(10.7%)] rounded-full flex justify-center items-center text-[18px] font-semibold absolute top-[28.5%] left-[50%] cursor-pointer'
           style={{ transform: 'translate(-50%)' }}
         />
@@ -96,7 +101,10 @@ const CustomerAcquisitionPage: NextPage = () => {
       ): // English
         <>
         <div
-          onClick={() => showPcModal({ qrCode: 'sf-04' })}
+          onClick={() => {
+            // showPcModal({ qrCode: 'sf-04' })
+            window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
+          }}
           className='w-[calc(15%)] h-[calc(8.25%)] rounded-full flex justify-center items-center text-[18px] font-semibold text-white absolute top-[28.7%] left-[50%] cursor-pointer'
           style={{ transform: 'translate(-50%)' }}
         ></div>   

@@ -585,6 +585,7 @@ const HeaderBar: NextPage = () => {
                   className={`menu-item primary-link ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
                   draggable="false"
                   onClick={() => {
+                    return window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
                     let qrCode: ContactUsOption['qrCode'] = 'sf-01';
                     if (pathname === '/about-us') {
                       qrCode = 'juzibot-01';
@@ -603,6 +604,7 @@ const HeaderBar: NextPage = () => {
                 className={`menu-item primary-link round ${isMainPageDefault ? 'no-bg' : 'has-bg'}`}
                 draggable="false"
                 onClick={() => {
+                  return window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
                   let qrCode: ContactUsOption['qrCode'] = 'sf-01';
                   if (pathname === '/about-us') {
                     qrCode = 'juzibot-01';

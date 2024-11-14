@@ -20,6 +20,8 @@ const Home: NextPage = () => {
   const { t, i18n } = useTranslation('homepage');
   const isZh = i18n.language === 'zh';
   const showModal = useShowModal();
+  // fix ts
+  showModal;
   useEffect(() => {
     if (process.browser) {
       window.addEventListener('resize', () =>
@@ -67,7 +69,10 @@ const Home: NextPage = () => {
             </h1>
             <div className="description">{t('government-body')}</div>
             {!HIDE_CONTACT_US && (
-              <button onClick={() => showModal({ type: 'ai' })} className="white-button-pure start-button bg-white text-red !shadow-none">
+              <button onClick={() => {
+                // showModal({ type: 'ai' });
+                window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
+              }} className="white-button-pure start-button bg-white text-red !shadow-none">
                 {t('start-free')}
               </button>
             )}
@@ -85,7 +90,10 @@ const Home: NextPage = () => {
             {t('government-title')}
           </h1>
           <div className="description">{t('government-body')}</div>
-          <button onClick={() => showModal({ type: 'ai' })} className="white-button-pure start-button bg-white text-red !shadow-none">
+          <button onClick={() => {
+            // showModal({ type: 'ai' });
+            window.open('https://insight.juzibot.com/auth/login?from=juzibot.com&type=register')
+          }} className="white-button-pure start-button bg-white text-red !shadow-none">
             {t('start-free')}
           </button>
         </div>
