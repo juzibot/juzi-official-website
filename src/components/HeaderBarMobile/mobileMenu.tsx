@@ -121,7 +121,7 @@ const MobileMenu = () => {
             </div>
             <div className="h-[1px] bg-[rgba(221,227,234,0.5)]" />
             <div className='h-[72px] flex items-center px-[28px]'>
-              <a href="https://chat.juzibot.com/" rel="noreferrer" target="_blank" className='w-[100%] text-[17px] text-[#364256]'>
+              <a href="https://chat.juzibot.com/?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6" rel="noreferrer" target="_blank" className='w-[100%] text-[17px] text-[#364256]'>
                 {t('gpt')}
               </a>
             </div>

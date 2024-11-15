@@ -127,7 +127,7 @@ const ContactUsModal: FC<Props> = ({ type = 'ai', qrCode = 'ai-01', open, onCanc
             width={124}
             alt={`type-${type}`}
             className="flex-shrink-0 mr-[10px]"
-            onClick={() => window.open('https://chat.juzibot.com')}
+            onClick={() => window.open('https://chat.juzibot.com?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6')}
           />
           <div className="flex flex-col justify-center text-[15px]">
             <p className="text-[#FF5E1E] text-[15px] font-medium mb-2">{appeal}</p>

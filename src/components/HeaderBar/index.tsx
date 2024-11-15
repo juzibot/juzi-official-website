@@ -516,7 +516,7 @@ const HeaderBar: NextPage = () => {
             <HeaderMenu href="https://wechaty.js.org/" linkTarget="_blank">
               {t('developer')}
             </HeaderMenu>
-            <HeaderMenu href="https://chat.juzibot.com/" linkTarget="_blank">
+            <HeaderMenu href="https://chat.juzibot.com/?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6" linkTarget="_blank">
             {t('gpt')}
             </HeaderMenu>
             {isZh ? (
@@ -556,7 +556,7 @@ const HeaderBar: NextPage = () => {
                   {t('solutions')}
                 </HeaderMenu>
               }
-              <HeaderMenu href="https://chat.juzibot.com/" linkTarget="_blank">
+              <HeaderMenu href="https://chat.juzibot.com/?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6" linkTarget="_blank">
               {t('gpt')}
               </HeaderMenu>
               <HeaderMenu hasArrow menu={<AboutUsExtendedMenu />}>
