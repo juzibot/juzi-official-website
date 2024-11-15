@@ -272,7 +272,7 @@ const FooterMobile: NextPage = () => {
               type="primary"
               className="mx-2 h-[44px] !rounded-3xl !bg-[#0555FF] !border-[#0555FF]"
               onClick={() => {
-                open('https://chat.juzibot.com');
+                open('https://chat.juzibot.com?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6');
               }}
             >{t('title-button')}</Button>
           </div>

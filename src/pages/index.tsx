@@ -76,7 +76,7 @@ const Home: NextPage = () => {
                   <a
                     style={{ background: 'linear-gradient(96deg, #EF3BFB 0.67%, #6721FF 98.48%)' }}
                     className="rounded-full px-10 py-4 text-white cursor-pointer text-[18px] hover:text-white"
-                    href="https://chat.juzibot.com/" rel="noreferrer" target="_blank"
+                    href="https://chat.juzibot.com/?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6" rel="noreferrer" target="_blank"
                   >
                     {t('title-button')}
                   </a>
@@ -103,7 +103,7 @@ const Home: NextPage = () => {
                   <a
                     style={{ background: 'linear-gradient(96deg, #EF3BFB 0.67%, #6721FF 98.48%)' }}
                     className="rounded-full px-10 py-4 text-white cursor-pointer text-[18px] hover:text-white"
-                    href="https://chat.juzibot.com/" rel="noreferrer" target="_blank"
+                    href="https://chat.juzibot.com/?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6" rel="noreferrer" target="_blank"
                   >
                     {t('title-button')}
                   </a>
@@ -118,7 +118,7 @@ const Home: NextPage = () => {
               <div className="w-[400px] h-[170px] p-5 rounded-xl bg-black flex flex-col">
                 <div className="text-white text-[21px] font-medium mb-2">{t('try-gpt')}</div>
                 <p className="flex-1 text-white">{t('try-gpt-subtitle')}</p>
-                <a className="text-[#EF3BFB] hover:text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer" href="https://chat.juzibot.com/" rel="noreferrer" target="_blank">{t('lets-chat')} <RightArrow /> </a>
+                <a className="text-[#EF3BFB] hover:text-[#EF3BFB] mt-2 inline-flex items-center gap-2 cursor-pointer" href="https://chat.juzibot.com/?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6" rel="noreferrer" target="_blank">{t('lets-chat')} <RightArrow /> </a>
               </div>
               <div className="w-[400px] h-[170px] p-5 rounded-xl bg-black flex flex-col">
                 <div className="text-white text-[21px] font-medium mb-2">{t('discover-products')}</div>

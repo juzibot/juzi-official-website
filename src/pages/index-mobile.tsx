@@ -59,7 +59,7 @@ const MobileIndexPage: NextPage<{}> = () => {
             <a
               style={{ background: 'linear-gradient(96deg, #EF3BFB 0.67%, #6721FF 98.48%)' }}
               className="h-[10vw] px-10 flex justify-center items-center rounded-full text-white cursor-pointer text-[3.6vw] hover:text-white"
-              href="https://chat.juzibot.com/" rel="noreferrer" target="_blank"
+              href="https://chat.juzibot.com/?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6" rel="noreferrer" target="_blank"
             >
               {t('title-button')}
             </a>
@@ -69,7 +69,7 @@ const MobileIndexPage: NextPage<{}> = () => {
             <div className="w-[calc(100vw-60px)] h-[42vw] p-5 rounded-xl bg-black flex flex-col">
               <div className="text-white font-medium mb-[1vw]" style={{ fontSize: i18n.language === 'en' ? 'calc(4vw)' : 'calc(4vw)' }}>{t('try-gpt')}</div>
               <p className="flex-1 text-white" style={{ fontSize: i18n.language === 'en' ? '3vw' : '3vw' }}>{t('try-gpt-subtitle')}</p>
-              <a className="text-[#EF3BFB] hover:text-[#EF3BFB] text-[3vw] inline-flex items-center gap-2 cursor-pointer" href="https://chat.juzibot.com/" rel="noreferrer" target="_blank">{t('lets-chat')} <RightArrow /> </a>
+              <a className="text-[#EF3BFB] hover:text-[#EF3BFB] text-[3vw] inline-flex items-center gap-2 cursor-pointer" href="https://chat.juzibot.com/?botId=8157f551-aeb1-41e0-b71c-bcb7c7ef13a6" rel="noreferrer" target="_blank">{t('lets-chat')} <RightArrow /> </a>
             </div>
             <div className="w-[calc(100vw-60px)] h-[42vw] p-5 rounded-xl bg-black flex flex-col">
               <div className="text-white font-medium mb-[1vw]" style={{ fontSize: i18n.language === 'en' ? 'calc(4vw)' : 'calc(4vw)' }}>{t('discover-products')}</div>
