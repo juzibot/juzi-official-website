@@ -1,6 +1,6 @@
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
-import { GetStaticProps, NextPage } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetServerSideProps, NextPage } from 'next';
+// import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import AppealBar from '@src/components/index/AppealBar';
 import Seo from '@src/components/common/Seo';
@@ -122,17 +122,24 @@ const ContactPlatformPage: NextPage = () => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  locale;
   return {
-    props: {
-      ...(await serverSideTranslations(locale || 'zh', [
-        'common',
-        'homepage',
-        'seos',
-      ])),
-      locale: locale?.toLowerCase() ?? 'zh',
+    redirect: {
+      destination: "/",
+      permanent: false,
     },
   };
+  // return {
+  //   props: {
+  //     ...(await serverSideTranslations(locale || 'zh', [
+  //       'common',
+  //       'homepage',
+  //       'seos',
+  //     ])),
+  //     locale: locale?.toLowerCase() ?? 'zh',
+  //   },
+  // };
 };
 
 export default ContactPlatformPage;

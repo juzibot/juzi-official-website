@@ -500,7 +500,7 @@ const HeaderBar: NextPage = () => {
               </HeaderMenu>
             ) : 
               <HeaderMenu href="/features/customer" linkTarget="_self">
-                {t('solutions')}
+                {t('solutions')}123
               </HeaderMenu>
             }
             {isZh && (
