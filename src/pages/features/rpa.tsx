@@ -1,6 +1,6 @@
 /* eslint-disable no-unreachable */
 import { isBrowserChrome } from '@src/utils/isBrowserChrome';
-import { GetStaticProps, NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useEffect, useState } from 'react';
 import Seo from '@src/components/common/Seo';
@@ -177,7 +177,14 @@ const CustomerAcquisitionPage: NextPage = () => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps = async ({ locale }) => {
+  locale;
+  return {
+    redirect: {
+      destination: "/",
+      permanent: false,
+    },
+  };
   return {
     props: {
       ...(await serverSideTranslations(locale || 'zh', [

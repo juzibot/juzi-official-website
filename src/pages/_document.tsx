@@ -35,7 +35,7 @@ class JuziSiteDocument extends Document<{
           <meta name="keywords" content={keywords} />
           <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         </Head>
-        <body>
+        <body style={{ height: '100vh', overflowY: 'auto' }}>
           <Main />
           <NextScript />
         </body>
